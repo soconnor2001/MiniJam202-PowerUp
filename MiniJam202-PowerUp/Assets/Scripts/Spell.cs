@@ -12,7 +12,8 @@ public class Spell : MonoBehaviour
     public AnimationCurve ChargeCurve;
     public float ChargeScale;
     public float ChargeTimeScale = 1;
-    public SpellType SpellType;
+    private SpellType _SpellType;
+    public string SpellTypeName;
 
     public void OnValidate()
     {
@@ -41,14 +42,14 @@ public class Spell : MonoBehaviour
     /// <param name="Origin"></param>
     public void EndSpell(Transform Origin)
     {
-        SpellType.CastSpell(CurrentChargeLevel(), Origin);
+        _SpellType.CastSpell(CurrentChargeLevel(), Origin);
     }
 
     
 
     private void Start()
     {
-        SpellType = (ExplosionSpell)ScriptableObject.CreateInstance("ExplosionSpell");
+        _SpellType = (ExplosionSpell)ScriptableObject.CreateInstance(SpellTypeName);
         _CastSpellAction = InputSystem.actions.FindAction("CastSpell");
     }
     private void Update()
