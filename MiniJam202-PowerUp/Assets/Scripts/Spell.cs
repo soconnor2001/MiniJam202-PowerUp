@@ -12,7 +12,6 @@ public class Spell : MonoBehaviour
     public AnimationCurve ChargeCurve;
     public float ChargeScale;
     public float ChargeTimeScale = 1;
-    [SerializeReference]
     public SpellType SpellType;
 
     public void OnValidate()
@@ -49,7 +48,7 @@ public class Spell : MonoBehaviour
 
     private void Start()
     {
-        SpellType = new ExplostionSpell();
+        SpellType = (ExplosionSpell)ScriptableObject.CreateInstance("ExplosionSpell");
         _CastSpellAction = InputSystem.actions.FindAction("CastSpell");
     }
     private void Update()
