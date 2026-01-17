@@ -6,6 +6,11 @@ public abstract class Spell
 
     public AnimationCurve ChargeCurve;
     public float ChargeScale;
+
+    public Spell()
+    {
+        StartSpell();
+    }
     public void StartSpell()
     {
         StartTime = Time.time;
