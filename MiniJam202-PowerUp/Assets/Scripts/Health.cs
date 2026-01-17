@@ -7,9 +7,16 @@ public class Health : MonoBehaviour
 {
     public int CurrentHealth { get; private set; }
 
+    [Tooltip("Includes the amount of damage received.")]
     public UnityEvent<uint> receivedDamage;
+
+    [Tooltip("Inclues the amount of healing received.")]
     public UnityEvent<uint> receivedHealing;
+
+    [Tooltip("Includes the current health value after changes are applied.")]
     public UnityEvent<uint> changedHealth;
+
+    [Tooltip("Invoked once current health reaches zero.")]
     public UnityEvent died;
 
     [Range(1, 10)]
