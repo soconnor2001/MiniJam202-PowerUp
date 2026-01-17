@@ -1,28 +1,69 @@
 using UnityEngine;
+using UnityEngine.InputSystem;
 
-public abstract class Spell
+
+public class Spell : MonoBehaviour
 {
+
+    InputAction _CastSpellAction;
+
     float StartTime;
 
     public AnimationCurve ChargeCurve;
     public float ChargeScale;
+    public float ChargeTimeScale = 1;
+    [SerializeReference]
+    public SpellType SpellType;
 
-    public Spell()
+    public void OnValidate()
     {
-        StartSpell();
+        if(ChargeTimeScale < .001f)
+        {
+            ChargeTimeScale = .001f;
+        }
     }
+
+    
+
+
     public void StartSpell()
     {
         StartTime = Time.time;
     }
     public float CurrentChargeLevel()
     {
-        return ChargeScale * ChargeCurve.Evaluate(Time.time - StartTime);
+        return ChargeScale * ChargeCurve.Evaluate((Time.time - StartTime)/ChargeTimeScale);
     }
-    public void EndSpell()
+    
+
+    /// <summary>
+    /// Origin, Location where spell starts, and will then travel along local Z Axis
+    /// </summary>
+    /// <param name="Origin"></param>
+    public void EndSpell(Transform Origin)
     {
-        CastSpell(Time.time-StartTime);
+        SpellType.CastSpell(CurrentChargeLevel(), Origin);
     }
 
-    public abstract void CastSpell(float timeSinceStart);
+    
+
+    private void Start()
+    {
+        SpellType = new ExplostionSpell();
+        _CastSpellAction = InputSystem.actions.FindAction("CastSpell");
+    }
+    private void Update()
+    {
+        if (_CastSpellAction.WasPressedThisFrame())
+        {
+            StartSpell();
+            Debug.Log("spell Cast pressed");
+        }
+        if (_CastSpellAction.WasReleasedThisFrame())
+        {
+            
+            Debug.Log("spell Cast released"+ CurrentChargeLevel()+transform.position);
+            EndSpell(transform);
+        }
+    }
 }
