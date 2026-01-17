@@ -535,6 +535,9 @@ MonoBehaviour:
   receivedHealing:
     m_PersistentCalls:
       m_Calls: []
+  changedHealth:
+    m_PersistentCalls:
+      m_Calls: []
   died:
     m_PersistentCalls:
       m_Calls: []
@@ -668,9 +671,9 @@ MonoBehaviour:
   collidedWithEnemy:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1551901780}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
-        m_MethodName: CollideWithEnemy
+      - m_Target: {fileID: 1551901781}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: ReceiveDamage
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

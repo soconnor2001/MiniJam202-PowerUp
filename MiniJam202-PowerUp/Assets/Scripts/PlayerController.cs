@@ -44,9 +44,4 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void CollideWithEnemy(uint damageAmount)
-    {
-        health.ReceiveDamage(damageAmount);
-    }
-
 }
