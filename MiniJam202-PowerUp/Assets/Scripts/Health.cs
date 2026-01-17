@@ -5,8 +5,11 @@ using UnityEngine.Events;
 [DisallowMultipleComponent]
 public class Health : MonoBehaviour
 {
+    public int CurrentHealth { get; private set; }
+
     public UnityEvent<uint> receivedDamage;
     public UnityEvent<uint> receivedHealing;
+    public UnityEvent<uint> changedHealth;
     public UnityEvent died;
 
     [Range(1, 10)]
@@ -14,8 +17,6 @@ public class Health : MonoBehaviour
 
     [Range(0.1f, 5.0f), Tooltip("Seconds of invulnerability after taking damage.")]
     public float invulnerabilityPeriod;
-
-    public int CurrentHealth { get; private set; }
 
     private bool isInvulnerable;
     private float invulnerabilityTimer;
@@ -60,6 +61,7 @@ public class Health : MonoBehaviour
     {
         CurrentHealth += healthAmount;
         CurrentHealth = Math.Clamp(CurrentHealth, 0, maximumHealth);
+        changedHealth.Invoke((uint)CurrentHealth);
         if (CurrentHealth == 0)
         {
             Die();
