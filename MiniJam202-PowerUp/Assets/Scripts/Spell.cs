@@ -56,12 +56,12 @@ public class Spell : MonoBehaviour
         if (_CastSpellAction.WasPressedThisFrame())
         {
             StartSpell();
-            Debug.Log("spell Cast pressed");
+            //Debug.Log("spell Cast pressed");
         }
         if (_CastSpellAction.WasReleasedThisFrame())
         {
             
-            Debug.Log("spell Cast released"+ CurrentChargeLevel()+transform.position);
+            //Debug.Log("spell Cast released"+ CurrentChargeLevel()+transform.position);
             EndSpell(transform);
         }
     }
