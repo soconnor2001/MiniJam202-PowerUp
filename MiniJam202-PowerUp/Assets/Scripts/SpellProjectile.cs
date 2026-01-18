@@ -42,7 +42,7 @@ public class SpellProjectile : MonoBehaviour
         ProjectileSystem.Stop();
         SetPSExplosionToRange(ExplosionSystem, damageRadius);
         ExplosionSystem.Play();
-        ShowDebugSphere(damageRadius,ExplosionSystem.main.duration);
+        //ShowDebugSphere(damageRadius,ExplosionSystem.main.duration);
         IsAlive = false;
         projectileSpeed = 0;
         // do damage
@@ -61,13 +61,13 @@ public class SpellProjectile : MonoBehaviour
 
     void SetPSExplosionToRange(ParticleSystem ps, float radius)
     {
-        float explosionRadius = radius*1.5f;
+        float explosionRadius = radius*1.05f;
         float newSpeed = 100;
-        float newLifeTime = radius / newSpeed;
-        if(newLifeTime < .2)
+        float newLifeTime = explosionRadius / newSpeed;
+        if(newLifeTime < .5)
         {
-            newLifeTime = .2f;
-            newSpeed = radius/ newLifeTime;
+            newLifeTime = .5f;
+            newSpeed = explosionRadius / newLifeTime;
         }
         ParticleSystem.MainModule main = ps.main;
         main.startLifetimeMultiplier = newLifeTime;
