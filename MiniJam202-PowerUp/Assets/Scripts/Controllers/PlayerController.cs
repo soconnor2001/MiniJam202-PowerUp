@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     private InputAction moveAction;
     private bool isAlive;
 
-    void Start()
+    void Awake()
     {
         if (health == null)
         {
@@ -43,5 +43,4 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
 }
