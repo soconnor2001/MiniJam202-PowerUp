@@ -1,0 +1,9 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <ui:VisualElement name="HealthBar" style="flex-grow: 1; position: absolute; width: 170px; height: 30px; flex-direction: row; top: 15px; left: 15px; align-self: center; align-content: center; justify-content: flex-start; align-items: flex-start;">
+        <ui:Image name="Heart_0" source="project://database/Assets/UI/heart_full.png?fileID=2800000&amp;guid=36e4e80846c2fab449be23ab9fc2220f&amp;type=3#heart_full" scale-mode="ScaleToFit" style="width: 20%;"/>
+        <ui:Image name="Heart_1" source="project://database/Assets/UI/heart_full.png?fileID=2800000&amp;guid=36e4e80846c2fab449be23ab9fc2220f&amp;type=3#heart_full" scale-mode="ScaleToFit" style="width: 20%;"/>
+        <ui:Image name="Heart_2" source="project://database/Assets/UI/heart_full.png?fileID=2800000&amp;guid=36e4e80846c2fab449be23ab9fc2220f&amp;type=3#heart_full" scale-mode="ScaleToFit" style="width: 20%;"/>
+        <ui:Image name="Heart_3" source="project://database/Assets/UI/heart_full.png?fileID=2800000&amp;guid=36e4e80846c2fab449be23ab9fc2220f&amp;type=3#heart_full" scale-mode="ScaleToFit" style="width: 20%;"/>
+        <ui:Image name="Heart_4" source="project://database/Assets/UI/heart_full.png?fileID=2800000&amp;guid=36e4e80846c2fab449be23ab9fc2220f&amp;type=3#heart_full" scale-mode="ScaleToFit" style="width: 20%;"/>
+    </ui:VisualElement>
+</ui:UXML>
