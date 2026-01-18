@@ -7,7 +7,7 @@ public class GameplayUI : MonoBehaviour
     public Texture fullHeart;
     public Texture emptyHeart;
 
-    void Start()
+    void Awake()
     {
         if (UIDocument == null)
         {
@@ -28,5 +28,4 @@ public class GameplayUI : MonoBehaviour
             heartImage.image = (i + 1) <= currentHealth ? fullHeart : emptyHeart;
         }
     }
-
 }

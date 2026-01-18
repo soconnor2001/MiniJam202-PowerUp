@@ -639,12 +639,15 @@ GameObject:
   - component: {fileID: 1684993581}
   - component: {fileID: 1684993580}
   - component: {fileID: 1684993587}
+  - component: {fileID: 1684993584}
   - component: {fileID: 1684993585}
   - component: {fileID: 1684993589}
   - component: {fileID: 1684993586}
   - component: {fileID: 1684993588}
-  - component: {fileID: 1684993584}
-  m_Layer: 0
+  - component: {fileID: 1684993592}
+  - component: {fileID: 1684993591}
+  - component: {fileID: 1684993590}
+  m_Layer: 6
   m_Name: Knife
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -816,6 +819,9 @@ MonoBehaviour:
   bobbingInAirBehavior: {fileID: 1684993589}
   movingToTargetBehavior: {fileID: 1684993586}
   rotatingToTargetBehavior: {fileID: 1684993588}
+  windupBehavior: {fileID: 1684993592}
+  chargingForwardBehavior: {fileID: 1684993591}
+  cooldownBehavior: {fileID: 1684993590}
 --- !u!114 &1684993588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -831,7 +837,7 @@ MonoBehaviour:
   target: {fileID: 1551901779}
   rotationSpeed: 140
   rotationPeriod: 3
-  inaccuracy: 0
+  inaccuracy: 20
 --- !u!114 &1684993589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -846,6 +852,45 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BobbingInAir
   frequency: 7
   amplitude: 0.5
+--- !u!114 &1684993590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684993579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0948b855e6e4a24893eb0f30c689ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaitingBehavior
+  waitPeriod: 0.5
+--- !u!114 &1684993591
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684993579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15acdf30478539343893af52d816ece6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ChargingForwardBehavior
+  chargeSpeed: 20
+--- !u!114 &1684993592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684993579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0948b855e6e4a24893eb0f30c689ca2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::WaitingBehavior
+  waitPeriod: 0.5
 --- !u!1 &2035343895
 GameObject:
   m_ObjectHideFlags: 0

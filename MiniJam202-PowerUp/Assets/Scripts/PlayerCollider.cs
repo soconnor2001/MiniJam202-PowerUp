@@ -15,5 +15,4 @@ public class PlayerCollider : MonoBehaviour
             collidedWithPlayer.Invoke(damageInflictedOnContact);
         }
     }
-
 }
