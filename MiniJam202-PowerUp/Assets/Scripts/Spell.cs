@@ -54,7 +54,7 @@ public class Spell : MonoBehaviour
         int i = 0;
         while (i < projectiles.Count)
         { 
-            if (projectiles[i] == null)
+            if (projectiles[i] == null || !projectiles[i].GetComponent<SpellProjectile>().IsAlive)
             {
                 projectiles.RemoveAt(i);
             }
