@@ -4,7 +4,7 @@ using UnityEngine;
 public class ExplosionSpell : ScriptableObject, SpellType
 {
     GameObject Projectile;
-    static float ProjectileSpeed = 20f;
+    
 
     public GameObject CastSpell(float Charge, Transform Origin)
     {
@@ -14,7 +14,7 @@ public class ExplosionSpell : ScriptableObject, SpellType
         Projectile.transform.position = Origin.position-Vector3.right;
         Projectile.transform.rotation = Origin.rotation;
         Projectile.transform.Rotate(Vector3.up, 90,Space.Self);
-        Projectile.GetComponent<SpellProjectile>().Initialize(ProjectileSpeed, Charge, Damage(Charge));
+        Projectile.GetComponent<SpellProjectile>().Initialize(Charge, Damage(Charge));
         return Projectile;
     }
 
