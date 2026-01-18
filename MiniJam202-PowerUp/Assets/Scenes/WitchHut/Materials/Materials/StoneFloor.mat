@@ -153,7 +153,7 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
         m_Texture: {fileID: 2800000, guid: 31b174c0245d3a04b838db564ef21ab9, type: 3}
-        m_Scale: {x: 0.5, y: 0.5}
+        m_Scale: {x: 0.7, y: 0.7}
         m_Offset: {x: 0, y: 0}
     - _NormalMapForMatCap:
         m_Texture: {fileID: 0}
@@ -247,7 +247,7 @@ Material:
     - _ToonMaterialVersion: 0
     m_Floats:
     - _1st2nd_Shades_Feather: 0.0001
-    - _1st_ShadeColor_Feather: 0.167
+    - _1st_ShadeColor_Feather: 0.334
     - _1st_ShadeColor_Step: 0.54
     - _2nd_ShadeColor_Feather: 0.0001
     - _2nd_ShadeColor_Step: 0.214
@@ -280,13 +280,13 @@ Material:
     - _BaseColorOverridden: 0
     - _BaseColorVisible: 1
     - _BaseColor_Step: 0.54
-    - _BaseShade_Feather: 0.167
+    - _BaseShade_Feather: 0.334
     - _Base_Speed: 0
     - _Blend: 0
     - _BlendModePreserveSpecular: 1
     - _BlurLevelMatcap: 0
     - _BlurLevelSGM: 0
-    - _BumpScale: 1
+    - _BumpScale: 0.414
     - _BumpScaleMatcap: 1
     - _CameraRolling_Stabilizer: 0
     - _ClearCoatMask: 0
@@ -337,7 +337,7 @@ Material:
     - _HeightCenter: 0.5
     - _HeightMapParametrization: 0
     - _HeightOffset: 0
-    - _HighColor_Power: 0.516
+    - _HighColor_Power: 0.619
     - _HighlightOverridden: 0
     - _HighlightVisible: 1
     - _InvTilingScale: 1
@@ -368,7 +368,7 @@ Material:
     - _Is_NormalMapForMatCap: 0
     - _Is_NormalMapToBase: 1
     - _Is_NormalMapToHighColor: 1
-    - _Is_NormalMapToRimLight: 0
+    - _Is_NormalMapToRimLight: 1
     - _Is_Ortho: 0
     - _Is_OutlineTex: 0
     - _Is_PingPong_Base: 0
@@ -478,22 +478,22 @@ Material:
     - _simpleUI: 0
     - _utsTechnique: 0
     m_Colors:
-    - _1st_ShadeColor: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
+    - _1st_ShadeColor: {r: 0.113339454, g: 0.11985322, b: 0.142, a: 1}
     - _2nd_ShadeColor: {r: 0, g: 0, b: 0, a: 1}
     - _AngelRingMaskColor: {r: 0, g: 1, b: 0, a: 1}
     - _AngelRing_Color: {r: 1, g: 1, b: 1, a: 1}
     - _Ap_RimLightColor: {r: 1, g: 1, b: 1, a: 1}
-    - _BaseColor: {r: 0.631, g: 0.631, b: 0.631, a: 1}
+    - _BaseColor: {r: 0.21281633, g: 0.22359182, b: 0.264, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _BaseColorMaskColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0.6309999, g: 0.6309999, b: 0.6309999, a: 1}
+    - _Color: {r: 0.2128163, g: 0.22359174, b: 0.26399997, a: 1}
     - _ColorShift: {r: 0, g: 0, b: 0, a: 1}
     - _DoubleSidedConstants: {r: 1, g: 1, b: -1, a: 0}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _EmissiveColor: {r: 0, g: 0, b: 0, a: 1}
     - _Emissive_Color: {r: 0, g: 0, b: 0, a: 1}
     - _FirstShadeMaskColor: {r: 0, g: 1, b: 1, a: 1}
-    - _HighColor: {r: 1, g: 1, b: 1, a: 1}
+    - _HighColor: {r: 0.49464133, g: 0.5232785, b: 0.617, a: 1}
     - _HighlightMaskColor: {r: 1, g: 1, b: 0, a: 1}
     - _InvPrimScale: {r: 1, g: 1, b: 0, a: 0}
     - _IridescenceThicknessRemap: {r: 0, g: 1, b: 0, a: 0}

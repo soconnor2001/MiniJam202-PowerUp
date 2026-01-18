@@ -357,6 +357,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2465339736323732019}
     m_Modifications:
+    - target: {fileID: 4574098109538023459, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 696c7127667225d4f97c6eb34a17b692, type: 2}
     - target: {fileID: 7388240146297619277, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
       propertyPath: m_Name
       value: WallTorch
@@ -842,6 +846,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2465339736323732019}
     m_Modifications:
+    - target: {fileID: 4574098109538023459, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 696c7127667225d4f97c6eb34a17b692, type: 2}
     - target: {fileID: 7388240146297619277, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
       propertyPath: m_Name
       value: WallTorch (5)
@@ -904,6 +912,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2465339736323732019}
     m_Modifications:
+    - target: {fileID: 4574098109538023459, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4574098109538023459, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: d9a07022eb2543445812acfa7abf01c2, type: 2}
     - target: {fileID: 7388240146297619277, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
       propertyPath: m_Name
       value: WallTorch (3)
@@ -1185,6 +1201,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2465339736323732019}
     m_Modifications:
+    - target: {fileID: 4574098109538023459, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 696c7127667225d4f97c6eb34a17b692, type: 2}
     - target: {fileID: 7388240146297619277, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
       propertyPath: m_Name
       value: WallTorch (1)
@@ -1383,6 +1403,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2465339736323732019}
     m_Modifications:
+    - target: {fileID: 4574098109538023459, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: dd86cb8e16a25a94dad950ea268976e7, type: 2}
     - target: {fileID: 7388240146297619277, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
       propertyPath: m_Name
       value: WallTorch (2)
@@ -1519,6 +1543,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.04
       objectReference: {fileID: 0}
+    - target: {fileID: 4574098109538023459, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 696c7127667225d4f97c6eb34a17b692, type: 2}
     - target: {fileID: 6119827433920078796, guid: 595e17b82b4fc194888ae54d01fc395e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.658
