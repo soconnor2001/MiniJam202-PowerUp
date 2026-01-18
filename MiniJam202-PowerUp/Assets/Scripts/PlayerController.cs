@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 [DisallowMultipleComponent]
 public class PlayerController : MonoBehaviour
 {
-    [Range(1f, 50f)]
-    public float speed;
+    [Range(1, 50)]
+    public int moveSpeed;
     public Health health;
 
     private InputAction moveAction;
@@ -38,7 +38,7 @@ public class PlayerController : MonoBehaviour
             Vector2 moveValue = moveAction.ReadValue<Vector2>();
             if (moveValue != null)
             {
-                Vector3 translationToApply = speed * Time.deltaTime * new Vector3(moveValue.x, 0, moveValue.y);
+                Vector3 translationToApply = moveSpeed * Time.deltaTime * new Vector3(moveValue.x, 0, moveValue.y);
                 transform.Translate(translationToApply);
             }
         }

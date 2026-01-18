@@ -28,4 +28,5 @@ public class GameplayUI : MonoBehaviour
             heartImage.image = (i + 1) <= currentHealth ? fullHeart : emptyHeart;
         }
     }
+
 }

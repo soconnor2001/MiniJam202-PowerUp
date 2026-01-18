@@ -2,10 +2,15 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 
-[DisallowMultipleComponent]
 public class Health : MonoBehaviour
 {
     public int CurrentHealth { get; private set; }
+
+    [Range(1, 10)]
+    public int maximumHealth;
+
+    [Range(0.1f, 5.0f), Tooltip("Seconds of invulnerability after taking damage.")]
+    public float invulnerabilityPeriod;
 
     [Tooltip("Includes the amount of damage received.")]
     public UnityEvent<uint> receivedDamage;
@@ -18,12 +23,6 @@ public class Health : MonoBehaviour
 
     [Tooltip("Invoked once current health reaches zero.")]
     public UnityEvent died;
-
-    [Range(1, 10)]
-    public int maximumHealth;
-
-    [Range(0.1f, 5.0f), Tooltip("Seconds of invulnerability after taking damage.")]
-    public float invulnerabilityPeriod;
 
     private bool isInvulnerable;
     private float invulnerabilityTimer;

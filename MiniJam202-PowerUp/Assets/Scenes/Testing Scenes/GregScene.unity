@@ -568,7 +568,7 @@ Transform:
   m_GameObject: {fileID: 1551901774}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 6.34, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -586,7 +586,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 590a3366ce36a5443ab7adc7827de0bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  speed: 10
+  moveSpeed: 12
   health: {fileID: 1551901781}
 --- !u!114 &1551901781
 MonoBehaviour:
@@ -600,6 +600,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 669e39780c7dc5142827b030ab4cbfd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Health
+  maximumHealth: 5
+  invulnerabilityPeriod: 1
   receivedDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -624,8 +626,6 @@ MonoBehaviour:
   died:
     m_PersistentCalls:
       m_Calls: []
-  maximumHealth: 5
-  invulnerabilityPeriod: 1
 --- !u!1 &1684993579
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,10 +638,15 @@ GameObject:
   - component: {fileID: 1684993582}
   - component: {fileID: 1684993581}
   - component: {fileID: 1684993580}
+  - component: {fileID: 1684993587}
+  - component: {fileID: 1684993585}
+  - component: {fileID: 1684993589}
+  - component: {fileID: 1684993586}
+  - component: {fileID: 1684993588}
   - component: {fileID: 1684993584}
   m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
+  m_Name: Knife
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -733,7 +738,7 @@ Transform:
   m_GameObject: {fileID: 1684993579}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10, y: 1, z: 0}
+  m_LocalPosition: {x: 10, y: 2, z: 10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -751,7 +756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1451f21e7ddf5964ba9fa2fd1571ae9d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  collidedWithEnemy:
+  damageInflictedOnContact: 1
+  collidedWithPlayer:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1551901781}
@@ -766,6 +772,80 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &1684993585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684993579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c33e1621377fb4d9f0e3b4dd76082c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::StateMachine
+--- !u!114 &1684993586
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684993579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fe7385e5f86450478d3be6c2f58db4a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MovingToTarget
+  moveSpeed: 15
+  moveTarget: {fileID: 0}
+  useRandomMoveTarget: 1
+  faceTarget: {fileID: 0}
+--- !u!114 &1684993587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684993579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66954e9b02e30a3459d68cdd2fb54bc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::KnifeController
+  stateMachine: {fileID: 1684993585}
+  bobbingInAirBehavior: {fileID: 1684993589}
+  movingToTargetBehavior: {fileID: 1684993586}
+  rotatingToTargetBehavior: {fileID: 1684993588}
+--- !u!114 &1684993588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684993579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 453a36d065441ec48ad36ed0867d48b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RotatingToTarget
+  target: {fileID: 1551901779}
+  rotationSpeed: 140
+  rotationPeriod: 3
+  inaccuracy: 0
+--- !u!114 &1684993589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1684993579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0cd274a391cb4448be8c4bcf966dc23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BobbingInAir
+  frequency: 7
+  amplitude: 0.5
 --- !u!1 &2035343895
 GameObject:
   m_ObjectHideFlags: 0
