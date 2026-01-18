@@ -4,7 +4,7 @@ using System.Collections.Generic;
 [System.Serializable]
 public class MonsterType
 {
-    public string Monster;
+    public string Name;
     public List<MonsterVariant> Variants;
-    public List<GameObject> SpawnPoints;
+    public List<Transform> SpawnPoints;
 }
