@@ -12,7 +12,7 @@ public class RotatingToTargetBehavior : BeginEndBehavior
     [Range(0.1f, 10.0f)]
     public float rotationPeriod;
 
-    [Range(0.0f, 1.0f)]
+    [Range(0.0f, 45.0f)]
     public float inaccuracy;
 
     private Vector3 rotationDirection;
