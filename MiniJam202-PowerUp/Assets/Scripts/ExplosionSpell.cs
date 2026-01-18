@@ -4,7 +4,7 @@ using UnityEngine;
 public class ExplosionSpell : ScriptableObject, SpellType
 {
     GameObject Projectile;
-    static float ProjectileSpeed = 10f;
+    static float ProjectileSpeed = 20f;
 
     public GameObject CastSpell(float Charge, Transform Origin)
     {
