@@ -27,7 +27,7 @@ public class Health : MonoBehaviour
     private bool isInvulnerable;
     private float invulnerabilityTimer;
 
-    void Start()
+    void Awake()
     {
         CurrentHealth = maximumHealth;
         isInvulnerable = false;
@@ -78,5 +78,4 @@ public class Health : MonoBehaviour
     {
         died.Invoke();
     }
-
 }

@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class BobbingInAirBehavior : MonoBehaviour
+public class BobbingInAirBehavior : BeginEndBehavior
 {
     [Range(1f, 25.0f)]
     public float frequency;
@@ -13,10 +13,10 @@ public class BobbingInAirBehavior : MonoBehaviour
     private bool isBobbing;
     private bool stopBobbing;
 
-    void Start()
+    void Awake()
     {
         startPosition = transform.position;
-        isBobbing = true;
+        isBobbing = false;
         stopBobbing = false;
     }
 
@@ -36,14 +36,14 @@ public class BobbingInAirBehavior : MonoBehaviour
         }
     }
 
-    public void StartBobbing()
+    public override void Begin()
     {
         ResetYAxis();
         isBobbing = true;
         stopBobbing = false;
     }
 
-    public void StopBobbing()
+    public override void End()
     {
         stopBobbing = true;
     }
@@ -52,5 +52,4 @@ public class BobbingInAirBehavior : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, startPosition.y, transform.position.z);
     }
-
 }
