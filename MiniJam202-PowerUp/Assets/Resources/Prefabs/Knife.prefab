@@ -62,8 +62,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.12520595, y: 0.19456719, z: 1.0185511}
-  m_Center: {x: -0.01190003, y: -0.04347939, z: -0.065365314}
+  m_Size: {x: 0.12520595, y: 3.3379252, z: 1.0185511}
+  m_Center: {x: -0.01190003, y: -1.6151584, z: -0.065365314}
 --- !u!54 &8723250023838940145
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -125,7 +125,19 @@ MonoBehaviour:
   damageInflictedOnContact: 1
   collidedWithPlayer:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: ReceiveDamage
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   collidedWithEnvironment:
     m_PersistentCalls:
       m_Calls:
@@ -179,7 +191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fe7385e5f86450478d3be6c2f58db4a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MovingToTarget
-  moveSpeed: 15
+  moveSpeed: 5
   moveTarget: {fileID: 0}
   useRandomMoveTarget: 1
   faceTarget: {fileID: 0}
@@ -197,7 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RotatingToTarget
   target: {fileID: 0}
   rotationSpeed: 1700
-  rotationPeriod: 1.5
+  rotationPeriod: 0.5
   inaccuracy: 20
 --- !u!114 &2832003021088454233
 MonoBehaviour:

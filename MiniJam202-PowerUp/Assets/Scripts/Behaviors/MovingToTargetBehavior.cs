@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MovingToTargetBehavior : BeginEndBehavior
 {
-    const int xBound = 15;
-    const int zBound = 15;
+    const int xBound = 9;
+    const int zBound = 9;
 
     public System.Action OnCompletedMovement;
 
