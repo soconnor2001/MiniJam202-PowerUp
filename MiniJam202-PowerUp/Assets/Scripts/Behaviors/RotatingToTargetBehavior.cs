@@ -6,7 +6,7 @@ public class RotatingToTargetBehavior : BeginEndBehavior
 
     public Transform target;
 
-    [Range(10, 500)]
+    [Range(10, 2000)]
     public int rotationSpeed;
 
     [Range(0.1f, 10.0f)]
