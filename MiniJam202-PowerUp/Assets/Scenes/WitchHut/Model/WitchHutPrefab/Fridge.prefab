@@ -60,13 +60,53 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -6730352048241357540, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5350445592229588760, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: -5350445592229588760, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: dd86cb8e16a25a94dad950ea268976e7, type: 2}
+    - target: {fileID: -4368474742415699414, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -2445395043608578743, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1078293706005081922, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
       propertyPath: m_Name
       value: Fridge
+      objectReference: {fileID: 0}
+    - target: {fileID: 3623315463316397882, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6169937426256539555, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7575137703161848319, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8427848662438063413, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9120611535997619454, guid: 9cee2c2da29e1a74d95b68b902bcf5f4, type: 3}
+      propertyPath: m_StaticShadowCaster
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

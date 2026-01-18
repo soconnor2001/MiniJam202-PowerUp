@@ -14,7 +14,7 @@ public class MonsterTypeUIE : PropertyDrawer
         var popup = new UnityEngine.UIElements.PopupWindow();
 
         popup.text = "Monsters";
-        popup.Add(new PropertyField(property.FindPropertyRelative("Monster"), "Monster Type"));
+        popup.Add(new PropertyField(property.FindPropertyRelative("Name"), "Monster Type Name"));
         popup.Add(new PropertyField(property.FindPropertyRelative("Variants"), "Monsters variants"));
         popup.Add(new PropertyField(property.FindPropertyRelative("SpawnPoints"), "Spawn Points"));
 
