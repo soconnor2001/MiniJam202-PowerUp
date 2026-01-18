@@ -99,6 +99,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Table
       objectReference: {fileID: 0}
+    - target: {fileID: 3488666570707285448, guid: adf92a53053f61546a2d2171c5aa3a28, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9cbae5676882d8549a0cdf5cbcaface9, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -169,6 +173,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5862782585262243511, guid: 02a35196c514c264b96965b544db65c6, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 1b1b5b6b6bf92db488e26e278a794194, type: 2}
     - target: {fileID: 919132149155446097, guid: 02a35196c514c264b96965b544db65c6, type: 3}
       propertyPath: m_Name
       value: bigCauldron
@@ -243,6 +251,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5862782585262243511, guid: 02a35196c514c264b96965b544db65c6, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: e10240a98c0f98b4cab1561ef2e7e99a, type: 2}
     - target: {fileID: 919132149155446097, guid: 02a35196c514c264b96965b544db65c6, type: 3}
       propertyPath: m_Name
       value: bigCauldron (2)
@@ -317,6 +329,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5862782585262243511, guid: 02a35196c514c264b96965b544db65c6, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 968d2c5e88a8e1e4aa90d76804f48c1a, type: 2}
     - target: {fileID: 919132149155446097, guid: 02a35196c514c264b96965b544db65c6, type: 3}
       propertyPath: m_Name
       value: bigCauldron (1)
