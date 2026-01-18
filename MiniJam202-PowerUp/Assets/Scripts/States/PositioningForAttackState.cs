@@ -12,13 +12,13 @@ public class PositioningForAttackState : IState, IDisposable
     {
         this.bobbingInAirBehavior = bobbingInAirBehavior;
         this.movingToTargetBehavior = movingToTargetBehavior;
-        this.movingToTargetBehavior.OnArrived += HandleArrived;
+        this.movingToTargetBehavior.OnCompletedMovement += HandleCompletedMovement;
     }
 
     public void Enter()
     {
-        bobbingInAirBehavior.StartBobbing();
-        movingToTargetBehavior.StartMoving();
+        bobbingInAirBehavior.Begin();
+        movingToTargetBehavior.Begin();
     }
 
     public void Execute()
@@ -28,19 +28,17 @@ public class PositioningForAttackState : IState, IDisposable
 
     public void Exit()
     {
-        bobbingInAirBehavior.StopBobbing();
-        movingToTargetBehavior.StopMoving();
-        movingToTargetBehavior.InitializeTargetInfo();
+        bobbingInAirBehavior.End();
+        movingToTargetBehavior.End();
     }
 
-    private void HandleArrived()
+    private void HandleCompletedMovement()
     {
         OnTargetReached?.Invoke();
     }
 
     public void Dispose()
     {
-        movingToTargetBehavior.OnArrived -= HandleArrived;
+        movingToTargetBehavior.OnCompletedMovement -= HandleCompletedMovement;
     }
-
 }

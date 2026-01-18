@@ -43,5 +43,4 @@ public class KnifeController : MonoBehaviour
     {
         stateMachine.ChangeState(positioningForAttackState);
     }
-
 }

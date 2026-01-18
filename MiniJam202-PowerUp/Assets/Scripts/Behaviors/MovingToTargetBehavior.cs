@@ -1,11 +1,11 @@
 using UnityEngine;
 
-public class MovingToTargetBehavior : MonoBehaviour
+public class MovingToTargetBehavior : BeginEndBehavior
 {
     const int xBound = 15;
     const int zBound = 15;
 
-    public System.Action OnArrived;
+    public System.Action OnCompletedMovement;
 
     [Range(1, 50)]
     public int moveSpeed;
@@ -25,14 +25,12 @@ public class MovingToTargetBehavior : MonoBehaviour
     private bool isMoving;
     private bool arrivedAtTarget;
 
-    void Start()
+    void Awake()
     {
         if (moveTarget == null && !useRandomMoveTarget)
         {
             Debug.LogError("Move target is not configured.");
         }
-
-        InitializeTargetInfo();
     }
 
     void Update()
@@ -42,7 +40,7 @@ public class MovingToTargetBehavior : MonoBehaviour
             if (CalculateRemainingDistance() < 0.1)
             {
                 arrivedAtTarget = true;
-                OnArrived?.Invoke();
+                OnCompletedMovement?.Invoke();
             }
             else
             {
@@ -53,14 +51,15 @@ public class MovingToTargetBehavior : MonoBehaviour
         }
     }
 
-    public void StartMoving()
+    public override void Begin()
     {
-        this.isMoving = true;
+        InitializeTargetInfo();
+        isMoving = true;
     }
 
-    public void StopMoving()
+    public override void End()
     {
-        this.isMoving = false;
+        isMoving = false;
     }
 
     public void InitializeTargetInfo()
@@ -89,5 +88,4 @@ public class MovingToTargetBehavior : MonoBehaviour
         Vector2 target = new(moveTargetVector.x, moveTargetVector.z);
         return Vector2.Distance(self, target);
     }
-
 }

@@ -15,7 +15,7 @@ public class TargetingPlayerState : IState, IDisposable
 
     public void Enter()
     {
-        rotatingToTargetBehavior.StartRotation();
+        rotatingToTargetBehavior.Begin();
     }
 
     public void Execute()
@@ -37,5 +37,4 @@ public class TargetingPlayerState : IState, IDisposable
     {
         rotatingToTargetBehavior.OnCompletedRotation -= HandleCompletedRotation;
     }
-
 }
