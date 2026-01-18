@@ -837,7 +837,7 @@ MonoBehaviour:
   target: {fileID: 1551901779}
   rotationSpeed: 140
   rotationPeriod: 3
-  inaccuracy: 0
+  inaccuracy: 20
 --- !u!114 &1684993589
 MonoBehaviour:
   m_ObjectHideFlags: 0

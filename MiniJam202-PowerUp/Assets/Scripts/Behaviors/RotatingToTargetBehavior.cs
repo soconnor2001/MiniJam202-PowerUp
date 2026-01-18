@@ -61,6 +61,7 @@ public class RotatingToTargetBehavior : BeginEndBehavior
 
             Vector3 targetWithYAxisMatchedToSelf = new(target.position.x, transform.position.y, target.position.z);
             transform.LookAt(targetWithYAxisMatchedToSelf);
+            transform.rotation = transform.rotation * Quaternion.AngleAxis(randomInaccuracy, Vector3.up);
 
             OnCompletedRotation?.Invoke();
         }
