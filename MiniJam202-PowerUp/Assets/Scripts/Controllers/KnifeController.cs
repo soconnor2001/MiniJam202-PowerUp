@@ -8,30 +8,43 @@ public class KnifeController : MonoBehaviour
     public BobbingInAirBehavior bobbingInAirBehavior;
     public MovingToTargetBehavior movingToTargetBehavior;
     public RotatingToTargetBehavior rotatingToTargetBehavior;
+    public WaitingBehavior windupBehavior;
+    public ChargingForwardBehavior chargingForwardBehavior;
+    public WaitingBehavior cooldownBehavior;
 
-    private PositioningForAttackState positioningForAttackState;
-    private TargetingPlayerState targetingPlayerState;
+    private PositioningState positioningForAttackState;
+    private TargetingState targetingPlayerState;
+    private WaitingState windupState;
+    private ChargingState chargingState;
+    private WaitingState cooldownState;
 
     void Start()
     {
-        positioningForAttackState = new PositioningForAttackState(bobbingInAirBehavior, movingToTargetBehavior);
+        positioningForAttackState = new PositioningState(bobbingInAirBehavior, movingToTargetBehavior);
         positioningForAttackState.OnTargetReached += HandleTargetReached;
 
-        targetingPlayerState = new TargetingPlayerState(rotatingToTargetBehavior);
+        targetingPlayerState = new TargetingState(rotatingToTargetBehavior);
         targetingPlayerState.OnTargetLocked += HandleTargetLocked;
 
+        windupState = new WaitingState(windupBehavior);
+        windupState.OnDoneWaiting += HandleWindupDone;
+
+        chargingState = new ChargingState(chargingForwardBehavior);
+        chargingState.OnDoneCharging += HandleChargeDone;
+
+        cooldownState = new WaitingState(cooldownBehavior);
+        cooldownState.OnDoneWaiting += HandleCooldownDone;
+
         stateMachine.ChangeState(positioningForAttackState);
-    }
-
-    void Update()
-    {
-
     }
 
     void OnDestroy()
     {
         positioningForAttackState.OnTargetReached -= HandleTargetReached;
         targetingPlayerState.OnTargetLocked -= HandleTargetLocked;
+        windupState.OnDoneWaiting -= HandleWindupDone;
+        chargingState.OnDoneCharging -= HandleChargeDone;
+        cooldownState.OnDoneWaiting -= HandleCooldownDone;
     }
 
     private void HandleTargetReached()
@@ -40,6 +53,21 @@ public class KnifeController : MonoBehaviour
     }
 
     private void HandleTargetLocked()
+    {
+        stateMachine.ChangeState(windupState);
+    }
+
+    private void HandleWindupDone()
+    {
+        stateMachine.ChangeState(chargingState);
+    }
+
+    private void HandleChargeDone()
+    {
+        stateMachine.ChangeState(cooldownState);
+    }
+
+    private void HandleCooldownDone()
     {
         stateMachine.ChangeState(positioningForAttackState);
     }

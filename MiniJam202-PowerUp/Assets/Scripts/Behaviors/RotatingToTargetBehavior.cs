@@ -41,7 +41,6 @@ public class RotatingToTargetBehavior : BeginEndBehavior
             if (rotationTimer <= 0)
             {
                 End();
-                rotationTimer = rotationPeriod;
             }
         }
     }
@@ -58,8 +57,10 @@ public class RotatingToTargetBehavior : BeginEndBehavior
             float randomInaccuracy = inaccuracy > 0 ? Random.Range(-inaccuracy, inaccuracy) : 0;
 
             isRotating = false;
-            transform.LookAt(target);
-            transform.rotation = new Quaternion(0, transform.rotation.y + randomInaccuracy, 0, transform.rotation.w);
+            rotationTimer = rotationPeriod;
+
+            Vector3 targetWithYAxisMatchedToSelf = new(target.position.x, transform.position.y, target.position.z);
+            transform.LookAt(targetWithYAxisMatchedToSelf);
 
             OnCompletedRotation?.Invoke();
         }

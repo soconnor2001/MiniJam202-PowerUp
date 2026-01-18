@@ -1,13 +1,13 @@
 using System;
 using UnityEngine;
 
-public class TargetingPlayerState : IState, IDisposable
+public class TargetingState : IState, IDisposable
 {
     public Action OnTargetLocked;
 
     private readonly RotatingToTargetBehavior rotatingToTargetBehavior;
 
-    public TargetingPlayerState(RotatingToTargetBehavior rotatingToTargetBehavior)
+    public TargetingState(RotatingToTargetBehavior rotatingToTargetBehavior)
     {
         this.rotatingToTargetBehavior = rotatingToTargetBehavior;
         this.rotatingToTargetBehavior.OnCompletedRotation += HandleCompletedRotation;
@@ -25,16 +25,16 @@ public class TargetingPlayerState : IState, IDisposable
 
     public void Exit()
     {
-
-    }
-
-    private void HandleCompletedRotation()
-    {
-        OnTargetLocked?.Invoke();
+        rotatingToTargetBehavior.End();
     }
 
     public void Dispose()
     {
         rotatingToTargetBehavior.OnCompletedRotation -= HandleCompletedRotation;
+    }
+
+    private void HandleCompletedRotation()
+    {
+        OnTargetLocked?.Invoke();
     }
 }

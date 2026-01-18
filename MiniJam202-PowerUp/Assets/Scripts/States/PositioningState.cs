@@ -1,14 +1,14 @@
 using System;
 using UnityEngine;
 
-public class PositioningForAttackState : IState, IDisposable
+public class PositioningState : IState, IDisposable
 {
     public Action OnTargetReached;
 
     private readonly BobbingInAirBehavior bobbingInAirBehavior;
     private readonly MovingToTargetBehavior movingToTargetBehavior;
 
-    public PositioningForAttackState(BobbingInAirBehavior bobbingInAirBehavior, MovingToTargetBehavior movingToTargetBehavior)
+    public PositioningState(BobbingInAirBehavior bobbingInAirBehavior, MovingToTargetBehavior movingToTargetBehavior)
     {
         this.bobbingInAirBehavior = bobbingInAirBehavior;
         this.movingToTargetBehavior = movingToTargetBehavior;
@@ -32,13 +32,13 @@ public class PositioningForAttackState : IState, IDisposable
         movingToTargetBehavior.End();
     }
 
-    private void HandleCompletedMovement()
-    {
-        OnTargetReached?.Invoke();
-    }
-
     public void Dispose()
     {
         movingToTargetBehavior.OnCompletedMovement -= HandleCompletedMovement;
+    }
+
+    private void HandleCompletedMovement()
+    {
+        OnTargetReached?.Invoke();
     }
 }
