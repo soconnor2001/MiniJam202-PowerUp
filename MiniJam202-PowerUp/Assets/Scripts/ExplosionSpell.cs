@@ -6,7 +6,7 @@ public class ExplosionSpell : ScriptableObject, SpellType
     GameObject Projectile;
     static float ProjectileSpeed = 10f;
 
-    public void CastSpell(float Charge, Transform Origin)
+    public GameObject CastSpell(float Charge, Transform Origin)
     {
         //forward is +X axis
         Projectile = Resources.Load<GameObject>("Prefabs/ExplosionSpellProjectile");
@@ -15,6 +15,7 @@ public class ExplosionSpell : ScriptableObject, SpellType
         Projectile.transform.rotation = Origin.rotation;
         Projectile.transform.Rotate(Vector3.up, 90,Space.Self);
         Projectile.GetComponent<SpellProjectile>().Initialize(ProjectileSpeed, Charge, Damage(Charge));
+        return Projectile;
     }
 
     public float Damage(float Charge)

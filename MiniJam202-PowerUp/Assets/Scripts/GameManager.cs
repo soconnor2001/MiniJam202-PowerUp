@@ -1,18 +1,26 @@
-using UnityEngine;
-
-using System.Collections.Generic;
-using System.Collections;
 using System;
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using static TMPro.SpriteAssetUtilities.TexturePacker_JsonArray;
+using static UnityEngine.EventSystems.EventTrigger;
 
 public class GameManager : MonoBehaviour
 {
-
+    
     public List<MonsterType> Monsters;
+    public Transform MonstersParent;
     public float MinutesToMaxDifficulty;
+    public float spawnPointRadius;
 
-    public float AverageSpawnRate;
+    public float minDistanceFromPlayer;
+    public Transform Player;
+
+    public AnimationCurve AverageTimeBetwenSpawns;
     public float SpawnRateVariability;
-    public int MaxMonsterToSpawn = 4;
+    public AnimationCurve MaxMonsterToSpawn;
+    
+    
     float TimeToNextSpawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,16 +30,16 @@ public class GameManager : MonoBehaviour
     }
     private void OnValidate()
     {
-        if (AverageSpawnRate < SpawnRateVariability / 2)
+        if (AverageTimeBetwenSpawns.Evaluate(Time.time) < SpawnRateVariability / 2)
         {
-            SpawnRateVariability = 2*AverageSpawnRate;
+            SpawnRateVariability = 2* AverageTimeBetwenSpawns.Evaluate(Time.time);
         }
     }
     
     void ResetTimeToNextSpawn()
     {
         TimeToNextSpawn = ((UnityEngine.Random.value * SpawnRateVariability) / 2f);
-        TimeToNextSpawn = (TimeToNextSpawn - (TimeToNextSpawn / 2)) + AverageSpawnRate;
+        TimeToNextSpawn = (TimeToNextSpawn - (TimeToNextSpawn / 2)) + AverageTimeBetwenSpawns.Evaluate(Time.time);
     }
 
     // Update is called once per frame
@@ -47,20 +55,34 @@ public class GameManager : MonoBehaviour
 
     void SpawnMonsters()
     {
-        (List<(GameObject, float)>, float) TypesList = GetMonsterTypeToSpawn();
+        (List<(GameObject, float)>, float,string) TypesList = GetMonsterTypeToSpawn();
         List<(GameObject, float)> weightedTypes = TypesList.Item1;
         float typeTotal = TypesList.Item2;
+        string monsterName = TypesList.Item3;
 
-        int numToSpawn = UnityEngine.Random.Range(0, MaxMonsterToSpawn+1);
-        List<GameObject> monsterToSpawn = new();
+        int numToSpawn = UnityEngine.Random.Range(0, (int)MaxMonsterToSpawn.Evaluate(Time.time)+1);
+        List<GameObject> monstersToSpawn = new();
         for (int i = 0; i < numToSpawn; i++)
         {
-            monsterToSpawn.Add(GetMonsterVariantToSpawn(weightedTypes, typeTotal));
+            monstersToSpawn.Add(GetMonsterVariantToSpawn(weightedTypes, typeTotal));
         }
 
         //Pick an unweighted spawnpoint and Instantiate allmonster there, but not on top of each other (hopefully)
+        List<Transform> spawnpointsToChooseFrom = Monsters.Find(x=>x.Name == monsterName).SpawnPoints;
+        Transform chosenSpawnPoint;
+        do
+        {
+            chosenSpawnPoint = spawnpointsToChooseFrom[UnityEngine.Random.Range(0, spawnpointsToChooseFrom.Count)];
+        } while (minDistanceFromPlayer > Vector3.Distance(chosenSpawnPoint.position, Player.position));
+        
 
+        
+        foreach(var monster in monstersToSpawn)
+        { 
+            GameObject newMonster = Instantiate(monster, RandomPointInCircle.GetRandomPointInCircle(chosenSpawnPoint.position, spawnPointRadius), Quaternion.LookRotation(Vector3.forward), MonstersParent);
+        }
     }
+    
     GameObject GetMonsterVariantToSpawn(List<(GameObject, float)> rates,float total)
     {
         float randVal = UnityEngine.Random.value * total;
@@ -82,15 +104,15 @@ public class GameManager : MonoBehaviour
 
         return TypeToSpawn;
     }
-    private (List<(GameObject, float)>,float) GetMonsterTypeToSpawn()
+    private (List<(GameObject, float)>,float,string) GetMonsterTypeToSpawn()
     {
         var chances = GetSpawnChanceDictionary();
-        List<(List<(GameObject, float)>, float)> rates = chances.Item1;
+        List<(List<(GameObject, float)>, float,string)> rates = chances.Item1;
         float total = chances.Item2;
 
         float randVal = UnityEngine.Random.value * total;
         int index = 0;
-        (List<(GameObject, float)>,float) TypeToSpawn = default!;
+        (List<(GameObject, float)>,float,string) TypeToSpawn = default!;
         
         while (index < rates.Count && randVal > 0)
         {
@@ -108,9 +130,9 @@ public class GameManager : MonoBehaviour
         return TypeToSpawn;
     }
 
-    private (List<(List<(GameObject, float)>,float)>,float) GetSpawnChanceDictionary()
+    private (List<(List<(GameObject, float)>,float,string)>,float) GetSpawnChanceDictionary()
     {
-        List<(List<(GameObject,float)>, float)> SpawnChances = new();
+        List<(List<(GameObject,float)>, float, string)> SpawnChances = new();
         float total = 0;
         foreach(var monsterType in Monsters)
         {
@@ -126,7 +148,7 @@ public class GameManager : MonoBehaviour
                     total += chance;
                 }
             }
-            SpawnChances.Add((variantChances, typeTotal));
+            SpawnChances.Add((variantChances, typeTotal,monsterType.Name));
             
         }
         return (SpawnChances, total);

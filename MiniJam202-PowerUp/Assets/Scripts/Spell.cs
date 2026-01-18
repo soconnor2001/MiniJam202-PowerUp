@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
-
+using System.Collections.Generic;
 
 public class Spell : MonoBehaviour
 {
@@ -14,6 +14,9 @@ public class Spell : MonoBehaviour
     public float ChargeTimeScale = 1;
     private SpellType _SpellType;
     public string SpellTypeName;
+    public int MaxProjectilesOnScreen = 1;
+
+    List<GameObject> projectiles;
 
     public void OnValidate()
     {
@@ -21,6 +24,7 @@ public class Spell : MonoBehaviour
         {
             ChargeTimeScale = .001f;
         }
+        
     }
 
     
@@ -40,15 +44,30 @@ public class Spell : MonoBehaviour
     /// Origin, Location where spell starts, and will then travel along local Z Axis
     /// </summary>
     /// <param name="Origin"></param>
-    public void EndSpell(Transform Origin)
+    public GameObject EndSpell(Transform Origin)
     {
-        _SpellType.CastSpell(CurrentChargeLevel(), Origin);
+        return _SpellType.CastSpell(CurrentChargeLevel(), Origin);
     }
 
+    public bool IsInCoolDown()
+    {
+        int i = 0;
+        while (i < projectiles.Count)
+        { 
+            if (projectiles[i] == null)
+            {
+                projectiles.RemoveAt(i);
+            }
+            i++;
+        }
+
+        return projectiles.Count >= MaxProjectilesOnScreen;
+    }
     
 
     private void Start()
     {
+        projectiles = new List<GameObject>();
         _SpellType = (ExplosionSpell)ScriptableObject.CreateInstance(SpellTypeName);
         _CastSpellAction = InputSystem.actions.FindAction("CastSpell");
     }
@@ -59,11 +78,11 @@ public class Spell : MonoBehaviour
             StartSpell();
             //Debug.Log("spell Cast pressed");
         }
-        if (_CastSpellAction.WasReleasedThisFrame())
+        if (_CastSpellAction.WasReleasedThisFrame() && !IsInCoolDown())
         {
             
             //Debug.Log("spell Cast released"+ CurrentChargeLevel()+transform.position);
-            EndSpell(transform);
+            projectiles.Add(EndSpell(transform));
         }
     }
 }
