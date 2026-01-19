@@ -65,8 +65,9 @@ public class GameManager : MonoBehaviour
             monstersToSpawn.Add(GetMonsterVariantToSpawn(weightedTypes, typeTotal));
         }
 
+        MonsterType monsterType = Monsters.Find(x=>x.Name == monsterName);
         //Pick an unweighted spawnpoint and Instantiate allmonster there, but not on top of each other (hopefully)
-        List<Transform> spawnpointsToChooseFrom = Monsters.Find(x=>x.Name == monsterName).SpawnPoints;
+        List<Transform> spawnpointsToChooseFrom = monsterType.SpawnPoints;
         Transform chosenSpawnPoint;
         do
         {
@@ -78,13 +79,9 @@ public class GameManager : MonoBehaviour
         foreach(var monster in monstersToSpawn)
         { 
             GameObject newMonster = Instantiate(monster, RandomPointInCircle.GetRandomPointInCircle(chosenSpawnPoint.position, spawnPointRadius), Quaternion.LookRotation(Vector3.forward), MonstersParent);
-            switch (newMonster.name)
-            {
-                case "Knife(Clone)":
-                    newMonster.GetComponent<RotatingToTargetBehavior>().target = playerCharacter.transform;
-                    newMonster.GetComponent<EnemyCollider>().collidedWithPlayer.AddListener(playerCharacter.GetComponent<Health>().ReceiveDamage);
-                    break;
-            }
+            newMonster.transform.position = new(newMonster.transform.position.x, monsterType.SpawnHeight, newMonster.transform.position.z);
+            if (newMonster.TryGetComponent<RotatingToTargetBehavior>(out var rotationBehavior)) rotationBehavior.target = playerCharacter.transform;
+            if (newMonster.TryGetComponent<EnemyCollider>(out var enemyCollider)) enemyCollider.collidedWithPlayer.AddListener(playerCharacter.GetComponent<Health>().ReceiveDamage);
         }
     }
     
