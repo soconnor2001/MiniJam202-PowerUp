@@ -1,31 +1,26 @@
 using UnityEngine;
 
-public class RotatingToTargetBehavior : MonoBehaviour
+public class RotatingToTargetBehavior : BeginEndBehavior
 {
     public System.Action OnCompletedRotation;
 
     public Transform target;
 
-    [Range(10, 500)]
+    [Range(10, 2000)]
     public int rotationSpeed;
 
     [Range(0.1f, 10.0f)]
     public float rotationPeriod;
 
-    [Range(0.0f, 1.0f)]
+    [Range(0.0f, 45.0f)]
     public float inaccuracy;
 
     private Vector3 rotationDirection;
     private bool isRotating;
     private float rotationTimer;
 
-    void Start()
+    void Awake()
     {
-        if (target == null)
-        {
-            Debug.LogError("Target to face is not configured.");
-        }
-
         rotationDirection = new Vector3(0, 1, 0);
         isRotating = false;
         rotationTimer = rotationPeriod;
@@ -40,26 +35,30 @@ public class RotatingToTargetBehavior : MonoBehaviour
             rotationTimer -= Time.deltaTime;
             if (rotationTimer <= 0)
             {
-                StopRotation();
-                rotationTimer = rotationPeriod;
+                End();
             }
         }
     }
 
-    public void StartRotation()
+    public override void Begin()
     {
         isRotating = true;
     }
 
-    public void StopRotation()
+    public override void End()
     {
-        float randomInaccuracy = inaccuracy > 0 ? Random.Range(-inaccuracy, inaccuracy) : 0;
+        if (isRotating)
+        {
+            float randomInaccuracy = inaccuracy > 0 ? Random.Range(-inaccuracy, inaccuracy) : 0;
 
-        isRotating = false;
-        transform.LookAt(target);
-        transform.rotation = new Quaternion(0, transform.rotation.y + randomInaccuracy, 0, transform.rotation.w);
+            isRotating = false;
+            rotationTimer = rotationPeriod;
 
-        OnCompletedRotation?.Invoke();
+            Vector3 targetWithYAxisMatchedToSelf = new(target.position.x, transform.position.y, target.position.z);
+            transform.LookAt(targetWithYAxisMatchedToSelf);
+            transform.rotation = transform.rotation * Quaternion.AngleAxis(randomInaccuracy, Vector3.up);
+
+            OnCompletedRotation?.Invoke();
+        }
     }
-
 }
