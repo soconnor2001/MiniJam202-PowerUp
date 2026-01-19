@@ -143,7 +143,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5795562510959099771, guid: b4543ce8e2013034b8c0a7764caea50c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.52606
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5795562510959099771, guid: b4543ce8e2013034b8c0a7764caea50c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -151,7 +151,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5795562510959099771, guid: b4543ce8e2013034b8c0a7764caea50c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.411
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5795562510959099771, guid: b4543ce8e2013034b8c0a7764caea50c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2031,6 +2031,7 @@ MonoBehaviour:
   playerCharacter: {fileID: 568237942}
   Monsters:
   - Name: Knife
+    SpawnHeight: 2.85
     Variants:
     - Monster: {fileID: 2168699477389224873, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
       SpawnCurve:
@@ -2038,19 +2039,19 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
-          value: 1
+          value: 0
           inSlope: 0
           outSlope: 0
-          tangentMode: 34
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
           time: 1
           value: 1
-          inSlope: 0
-          outSlope: 0
-          tangentMode: 34
+          inSlope: 2
+          outSlope: 2
+          tangentMode: 0
           weightedMode: 0
           inWeight: 0
           outWeight: 0
