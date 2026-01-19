@@ -15,6 +15,7 @@ public class MonsterTypeUIE : PropertyDrawer
 
         popup.text = "Monsters";
         popup.Add(new PropertyField(property.FindPropertyRelative("Name"), "Monster Type Name"));
+        popup.Add(new PropertyField(property.FindPropertyRelative("SpawnHeight"), "Monster Spawn Height"));
         popup.Add(new PropertyField(property.FindPropertyRelative("Variants"), "Monsters variants"));
         popup.Add(new PropertyField(property.FindPropertyRelative("SpawnPoints"), "Spawn Points"));
 
