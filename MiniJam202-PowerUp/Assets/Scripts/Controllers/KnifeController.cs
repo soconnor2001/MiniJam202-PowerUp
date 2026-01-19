@@ -47,6 +47,14 @@ public class KnifeController : MonoBehaviour
         cooldownState.OnDoneWaiting -= HandleCooldownDone;
     }
 
+    public void AbortChargeOnEnvironmentCollision()
+    {
+        if (stateMachine.CurrentState == chargingState)
+        {
+            stateMachine.ChangeState(cooldownState);
+        }
+    }
+
     private void HandleTargetReached()
     {
         stateMachine.ChangeState(targetingPlayerState);
