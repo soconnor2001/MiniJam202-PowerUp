@@ -25,14 +25,6 @@ public class MovingToTargetBehavior : BeginEndBehavior
     private bool isMoving;
     private bool arrivedAtTarget;
 
-    void Awake()
-    {
-        if (moveTarget == null && !useRandomMoveTarget)
-        {
-            Debug.LogError("Move target is not configured.");
-        }
-    }
-
     void Update()
     {
         if (isMoving && !arrivedAtTarget)

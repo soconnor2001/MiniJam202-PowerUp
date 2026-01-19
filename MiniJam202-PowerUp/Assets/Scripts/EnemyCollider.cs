@@ -21,4 +21,9 @@ public class EnemyCollider : MonoBehaviour
             collidedWithEnvironment.Invoke();
         }
     }
+
+    void OnDestroy()
+    {
+        collidedWithPlayer?.RemoveAllListeners();
+    }
 }

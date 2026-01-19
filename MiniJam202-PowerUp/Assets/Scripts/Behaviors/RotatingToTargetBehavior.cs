@@ -21,11 +21,6 @@ public class RotatingToTargetBehavior : BeginEndBehavior
 
     void Awake()
     {
-        if (target == null)
-        {
-            Debug.LogError("Target to face is not configured.");
-        }
-
         rotationDirection = new Vector3(0, 1, 0);
         isRotating = false;
         rotationTimer = rotationPeriod;

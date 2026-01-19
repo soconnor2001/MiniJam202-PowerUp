@@ -7,7 +7,7 @@ using static UnityEngine.EventSystems.EventTrigger;
 
 public class GameManager : MonoBehaviour
 {
-    
+    public GameObject playerCharacter;
     public List<MonsterType> Monsters;
     public Transform MonstersParent;
     public float MinutesToMaxDifficulty;
@@ -19,14 +19,12 @@ public class GameManager : MonoBehaviour
     public AnimationCurve AverageTimeBetwenSpawns;
     public float SpawnRateVariability;
     public AnimationCurve MaxMonsterToSpawn;
-    
-    
+
     float TimeToNextSpawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ResetTimeToNextSpawn();
-
     }
     private void OnValidate()
     {
@@ -80,6 +78,13 @@ public class GameManager : MonoBehaviour
         foreach(var monster in monstersToSpawn)
         { 
             GameObject newMonster = Instantiate(monster, RandomPointInCircle.GetRandomPointInCircle(chosenSpawnPoint.position, spawnPointRadius), Quaternion.LookRotation(Vector3.forward), MonstersParent);
+            switch (newMonster.name)
+            {
+                case "Knife(Clone)":
+                    newMonster.GetComponent<RotatingToTargetBehavior>().target = playerCharacter.transform;
+                    newMonster.GetComponent<EnemyCollider>().collidedWithPlayer.AddListener(playerCharacter.GetComponent<Health>().ReceiveDamage);
+                    break;
+            }
         }
     }
     
