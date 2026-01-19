@@ -29,7 +29,10 @@ public class ChargingForwardBehavior : BeginEndBehavior
 
     public override void End()
     {
-        isCharging = false;
-        OnCompletedCharge?.Invoke();
+        if (isCharging)
+        {
+            isCharging = false;
+            OnCompletedCharge?.Invoke();
+        }
     }
 }

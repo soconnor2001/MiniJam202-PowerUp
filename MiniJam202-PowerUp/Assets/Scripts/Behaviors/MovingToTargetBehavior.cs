@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class MovingToTargetBehavior : BeginEndBehavior
 {
-    const int xBound = 15;
-    const int zBound = 15;
+    const int xBound = 9;
+    const int zBound = 9;
 
     public System.Action OnCompletedMovement;
 
@@ -24,14 +24,6 @@ public class MovingToTargetBehavior : BeginEndBehavior
     private Vector3 direction;
     private bool isMoving;
     private bool arrivedAtTarget;
-
-    void Awake()
-    {
-        if (moveTarget == null && !useRandomMoveTarget)
-        {
-            Debug.LogError("Move target is not configured.");
-        }
-    }
 
     void Update()
     {

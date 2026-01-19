@@ -6,7 +6,7 @@ public class RotatingToTargetBehavior : BeginEndBehavior
 
     public Transform target;
 
-    [Range(10, 500)]
+    [Range(10, 2000)]
     public int rotationSpeed;
 
     [Range(0.1f, 10.0f)]
@@ -21,11 +21,6 @@ public class RotatingToTargetBehavior : BeginEndBehavior
 
     void Awake()
     {
-        if (target == null)
-        {
-            Debug.LogError("Target to face is not configured.");
-        }
-
         rotationDirection = new Vector3(0, 1, 0);
         isRotating = false;
         rotationTimer = rotationPeriod;

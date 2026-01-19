@@ -3,17 +3,17 @@ using UnityEngine;
 [DisallowMultipleComponent]
 public class StateMachine : MonoBehaviour
 {
-    private IState currentState;
+    public IState CurrentState { get; private set; }
 
     public void Update()
     {
-        currentState?.Execute();
+        CurrentState?.Execute();
     }
 
     public void ChangeState(IState newState)
     {
-        currentState?.Exit();
-        currentState = newState;
-        currentState?.Enter();
+        CurrentState?.Exit();
+        CurrentState = newState;
+        CurrentState?.Enter();
     }
 }
