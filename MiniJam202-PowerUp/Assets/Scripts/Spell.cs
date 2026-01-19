@@ -13,7 +13,7 @@ public class Spell : MonoBehaviour
     public float ChargeScale;
     public float ChargeTimeScale = 1;
     private SpellType _SpellType;
-    public string SpellTypeName;
+    public string SpellTypeName = "ExplosionSpell";
     public int MaxProjectilesOnScreen = 1;
 
     List<GameObject> projectiles;
