@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class Spell : MonoBehaviour
 {
+    public Animator animator;
 
     InputAction _CastSpellAction;
 
@@ -76,6 +77,7 @@ public class Spell : MonoBehaviour
         if (_CastSpellAction.WasPressedThisFrame())
         {
             StartSpell();
+            animator.SetTrigger("Fire");
             //Debug.Log("spell Cast pressed");
         }
         if (_CastSpellAction.WasReleasedThisFrame() && !IsInCoolDown())
@@ -83,6 +85,7 @@ public class Spell : MonoBehaviour
             
             //Debug.Log("spell Cast released"+ CurrentChargeLevel()+transform.position);
             projectiles.Add(EndSpell(transform));
+            animator.SetTrigger("LetGo");
         }
     }
 }
