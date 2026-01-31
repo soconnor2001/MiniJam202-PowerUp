@@ -77,5 +77,15 @@ public class Health : MonoBehaviour
     public void Die()
     {
         died.Invoke();
+        if(gameObject.tag == "Player")
+        {
+            Debug.Log("YOU DIED!!!!!!!!!!!!!!!!!!!!!!!");
+        }
+        else if(gameObject.tag == "Enemy")
+        {
+            Destroy(gameObject);
+        }
     }
+
+   
 }

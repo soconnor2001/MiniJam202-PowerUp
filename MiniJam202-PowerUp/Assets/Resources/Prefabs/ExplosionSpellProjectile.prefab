@@ -5024,9 +5024,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1083991599410885024}
-  - component: {fileID: 1921315639209682019}
   - component: {fileID: 2721254328815964083}
   - component: {fileID: 8223655024232314144}
+  - component: {fileID: 5335529529336085975}
   m_Layer: 0
   m_Name: ExplosionSpellProjectile
   m_TagString: Untagged
@@ -5052,27 +5052,6 @@ Transform:
   - {fileID: 2559524518175118168}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0.371, y: -47.828, z: 0.326}
---- !u!65 &1921315639209682019
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7684936707968385467}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 1
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.1, y: 0.1, z: 0.1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2721254328815964083
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5088,7 +5067,9 @@ MonoBehaviour:
   ProjectileSystem: {fileID: 5843104042001469998}
   ExplosionSystem: {fileID: 2052867528255597219}
   projectileSpeed: 20
+  ExplosionLength: 0.5
   IsAlive: 0
+  IsExploding: 0
 --- !u!54 &8223655024232314144
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5116,6 +5097,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!135 &5335529529336085975
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7684936707968385467}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4719049793435152240
 PrefabInstance:
   m_ObjectHideFlags: 0
