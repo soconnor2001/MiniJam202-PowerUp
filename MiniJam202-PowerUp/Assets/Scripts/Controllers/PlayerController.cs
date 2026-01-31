@@ -14,7 +14,8 @@ public class PlayerController : MonoBehaviour
 
     private InputAction moveAction;
     private float initialYPosition;
-    private bool isAlive;
+    [HideInInspector]
+    public bool isAlive;
 
     void Awake()
     {
