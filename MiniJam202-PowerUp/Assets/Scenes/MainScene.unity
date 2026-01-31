@@ -804,6 +804,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rana_Anim_Idle_002
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: cfad46dc1b504634f8126ed093a2c22e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 3b85974b7d5d79f46beb9816d7ea9556, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
