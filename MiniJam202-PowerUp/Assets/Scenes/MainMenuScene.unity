@@ -2698,7 +2698,7 @@ TextMesh:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 266327889}
   m_Text: "Stella Oconnor - Gameplay Programer / VFX / Concept / UI/UX Designer\nJustin
-    Weeks - Rigger / VFX / Concept / Surfacing  \nQuite Landestoy - Modeler / Texture
+    Weeks - Rigger / VFX / Concept / Surfacing  \nQuite uneventful  - Modeler / Texture
     Artist / UI/UX Design / Concept\nSeth Kent - Audio Designer / Concept \nGreg
     Greg - Gregplay Programer / Greg / Desigreg / Congepg\nAlice Alice -  Animator
     / Level Layout / Lighting / Concept"
@@ -4094,7 +4094,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &762824775
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7613,7 +7613,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1995627994
 RectTransform:
   m_ObjectHideFlags: 0
