@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6819255132677714385}
   - component: {fileID: 6356488640304794756}
   - component: {fileID: 5831493422084969046}
+  - component: {fileID: 3876979687906882912}
   - component: {fileID: 2969950822063778548}
   - component: {fileID: 3699359218666223829}
   m_Layer: 0
@@ -173,6 +174,20 @@ MonoBehaviour:
   moveSpeed: 12
   controller: {fileID: 6819255132677714385}
   health: {fileID: 3699359218666223829}
+  isAlive: 0
+--- !u!114 &3876979687906882912
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9077137301450666413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4cf579f9f636e34a8fcd365bc81cf78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FaceMouseControl
+  playerControllerScript: {fileID: 5831493422084969046}
 --- !u!114 &2969950822063778548
 MonoBehaviour:
   m_ObjectHideFlags: 0
