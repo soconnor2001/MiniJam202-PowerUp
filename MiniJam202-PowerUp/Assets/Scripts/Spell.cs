@@ -16,6 +16,8 @@ public class Spell : MonoBehaviour
     private SpellType _SpellType;
     public string SpellTypeName = "ExplosionSpell";
     public int MaxProjectilesOnScreen = 1;
+    public int isHeldDelayInt = 5;
+    public int isHeldDelayBase = 5;
 
     List<GameObject> projectiles;
 
@@ -39,6 +41,8 @@ public class Spell : MonoBehaviour
     {
         return ChargeScale * ChargeCurve.Evaluate((Time.time - StartTime)/ChargeTimeScale);
     }
+
+
     
 
     /// <summary>
@@ -72,20 +76,39 @@ public class Spell : MonoBehaviour
         _SpellType = (ExplosionSpell)ScriptableObject.CreateInstance(SpellTypeName);
         _CastSpellAction = InputSystem.actions.FindAction("CastSpell");
     }
+
+
     private void Update()
     {
-        if (_CastSpellAction.WasPressedThisFrame())
+        
+        if(_CastSpellAction.IsPressed() == false){
+            if(isHeldDelayInt <= 0){
+                animator.SetBool("IsHeld", false);
+                isHeldDelayInt = isHeldDelayBase;
+            }else
+            {
+            isHeldDelayInt -= 1;
+            }
+            
+        }
+        if(_CastSpellAction.WasPressedThisFrame()){
+            animator.SetTrigger("Fire");
+            animator.SetBool("IsHeld", true);
+        }
+
+        if (_CastSpellAction.WasPressedThisFrame() && !IsInCoolDown())
         {
             StartSpell();
-            animator.SetTrigger("Fire");
             //Debug.Log("spell Cast pressed");
         }
+        
+
         if (_CastSpellAction.WasReleasedThisFrame() && !IsInCoolDown())
         {
-            
             //Debug.Log("spell Cast released"+ CurrentChargeLevel()+transform.position);
             projectiles.Add(EndSpell(transform));
-            animator.SetTrigger("LetGo");
+
         }
+
     }
 }
