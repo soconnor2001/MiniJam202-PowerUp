@@ -37,7 +37,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 9098047972702123125}
+  - {fileID: 7256528027446190396}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &594239205574936219
@@ -185,7 +185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5bb75154e16438342893c595e95fdb1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Spell
-  animator: {fileID: 3272774717262750760}
+  animator: {fileID: 4007540550584807777}
   ChargeCurve:
     serializedVersion: 2
     m_Curve:
@@ -252,7 +252,7 @@ MonoBehaviour:
   died:
     m_PersistentCalls:
       m_Calls: []
---- !u!1001 &345020662951898212
+--- !u!1001 &2179563897700038957
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -260,25 +260,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8685322621106728399}
     m_Modifications:
-    - target: {fileID: 71998375691198160, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.796
-      objectReference: {fileID: 0}
-    - target: {fileID: 71998375691198160, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.014
-      objectReference: {fileID: 0}
-    - target: {fileID: 71998375691198160, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.276
-      objectReference: {fileID: 0}
     - target: {fileID: 1196456023892394821, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
       propertyPath: m_Name
       value: Rana
-      objectReference: {fileID: 0}
-    - target: {fileID: 8503091826641565662, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
-      propertyPath: m_Intensity
-      value: 2.03
       objectReference: {fileID: 0}
     - target: {fileID: 8830151608159803409, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -325,13 +309,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
---- !u!95 &3272774717262750760 stripped
+--- !u!95 &4007540550584807777 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 3000234307596421196, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
-  m_PrefabInstance: {fileID: 345020662951898212}
+  m_PrefabInstance: {fileID: 2179563897700038957}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &9098047972702123125 stripped
+--- !u!4 &7256528027446190396 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8830151608159803409, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
-  m_PrefabInstance: {fileID: 345020662951898212}
+  m_PrefabInstance: {fileID: 2179563897700038957}
   m_PrefabAsset: {fileID: 0}
