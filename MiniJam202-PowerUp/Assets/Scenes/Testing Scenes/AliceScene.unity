@@ -888,6 +888,60 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ef5218cb533d9540876f9d1448f42d0, type: 3}
+--- !u!1 &1089374159
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1089374161}
+  - component: {fileID: 1089374160}
+  m_Layer: 0
+  m_Name: Spell
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1089374160
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089374159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bb75154e16438342893c595e95fdb1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Spell
+  ChargeCurve:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  ChargeScale: 0
+  ChargeTimeScale: 1
+  SpellTypeName: ExplosionSpell
+  MaxProjectilesOnScreen: 1
+--- !u!4 &1089374161
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089374159}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.12986, y: 1.48816, z: 0.60268}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1132726005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -946,7 +1000,7 @@ PrefabInstance:
       objectReference: {fileID: 2058478341}
     - target: {fileID: 4148809841400604427, guid: 9002a2b8b04ea7c43831d7f4668f166c, type: 3}
       propertyPath: m_VersionIndex
-      value: 7492
+      value: 7495
       objectReference: {fileID: 0}
     - target: {fileID: 4411067428358968808, guid: 9002a2b8b04ea7c43831d7f4668f166c, type: 3}
       propertyPath: m_Mesh
@@ -966,7 +1020,7 @@ PrefabInstance:
       objectReference: {fileID: 960848736}
     - target: {fileID: 5523417869129421980, guid: 9002a2b8b04ea7c43831d7f4668f166c, type: 3}
       propertyPath: m_VersionIndex
-      value: 7403
+      value: 7406
       objectReference: {fileID: 0}
     - target: {fileID: 5561462094056780221, guid: 9002a2b8b04ea7c43831d7f4668f166c, type: 3}
       propertyPath: m_Mesh
@@ -974,7 +1028,7 @@ PrefabInstance:
       objectReference: {fileID: 205197988}
     - target: {fileID: 5561462094056780221, guid: 9002a2b8b04ea7c43831d7f4668f166c, type: 3}
       propertyPath: m_VersionIndex
-      value: 7072
+      value: 7075
       objectReference: {fileID: 0}
     - target: {fileID: 5852091643838214015, guid: 9002a2b8b04ea7c43831d7f4668f166c, type: 3}
       propertyPath: m_Mesh
@@ -986,7 +1040,7 @@ PrefabInstance:
       objectReference: {fileID: 791362277}
     - target: {fileID: 6011647145001895965, guid: 9002a2b8b04ea7c43831d7f4668f166c, type: 3}
       propertyPath: m_VersionIndex
-      value: 8774
+      value: 8777
       objectReference: {fileID: 0}
     - target: {fileID: 6118807053773139721, guid: 9002a2b8b04ea7c43831d7f4668f166c, type: 3}
       propertyPath: m_Mesh
@@ -1010,7 +1064,7 @@ PrefabInstance:
       objectReference: {fileID: 485648447}
     - target: {fileID: 7781584890187597069, guid: 9002a2b8b04ea7c43831d7f4668f166c, type: 3}
       propertyPath: m_VersionIndex
-      value: 8348
+      value: 8351
       objectReference: {fileID: 0}
     - target: {fileID: 7821929365176162240, guid: 9002a2b8b04ea7c43831d7f4668f166c, type: 3}
       propertyPath: m_Mesh
@@ -1479,3 +1533,4 @@ SceneRoots:
   - {fileID: 1035312502}
   - {fileID: 8442860014327072131}
   - {fileID: 1916402909}
+  - {fileID: 1089374161}
