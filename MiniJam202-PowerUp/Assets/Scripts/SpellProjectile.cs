@@ -28,9 +28,9 @@ public class SpellProjectile : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        string[] layers = { "Targets" };
+        string[] layers = { "Targets" ,"Environment"};
         int mask = LayerMask.GetMask(layers);
-        if (mask == (mask | (1 << other.gameObject.layer))) //add environment layer later
+        if (mask == (mask | (1 << other.gameObject.layer))) 
         {
             Explode();
         }
