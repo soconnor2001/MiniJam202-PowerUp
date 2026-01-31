@@ -11,7 +11,8 @@ public class ExplosionSpell : ScriptableObject, SpellType
         //forward is +X axis
         Projectile = Resources.Load<GameObject>("Prefabs/ExplosionSpellProjectile");
         Projectile = Instantiate(Projectile);
-        Projectile.transform.position = Origin.position-Vector3.right;
+        Projectile.transform.position = Origin.position;
+        Projectile.transform.Translate(Vector3.right,Origin);
         Projectile.transform.rotation = Origin.rotation;
         Projectile.transform.Rotate(Vector3.up, 90,Space.Self);
         Projectile.GetComponent<SpellProjectile>().Initialize(Charge, Damage(Charge));
