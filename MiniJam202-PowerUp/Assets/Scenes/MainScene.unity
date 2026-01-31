@@ -1539,9 +1539,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 195716729}
     m_Modifications:
+    - target: {fileID: 71998375691198160, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -1.796
+      objectReference: {fileID: 0}
+    - target: {fileID: 71998375691198160, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.014
+      objectReference: {fileID: 0}
+    - target: {fileID: 71998375691198160, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.276
+      objectReference: {fileID: 0}
     - target: {fileID: 1196456023892394821, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
       propertyPath: m_Name
       value: Rana
+      objectReference: {fileID: 0}
+    - target: {fileID: 8503091826641565662, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
+      propertyPath: m_Intensity
+      value: 2.03
       objectReference: {fileID: 0}
     - target: {fileID: 8830151608159803409, guid: 70547deab88394f4980c3a3b88e5a48b, type: 3}
       propertyPath: m_LocalPosition.x
