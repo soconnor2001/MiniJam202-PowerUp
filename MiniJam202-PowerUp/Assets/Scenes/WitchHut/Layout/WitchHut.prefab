@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6033191421854084449}
   - component: {fileID: 4769015618072498026}
   - component: {fileID: 6692793491036931638}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BackWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2166,7 +2166,7 @@ GameObject:
   - component: {fileID: 5247038217584948187}
   - component: {fileID: 5612467856602515301}
   - component: {fileID: 5461984279095487754}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TorchLight (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2293,7 +2293,7 @@ GameObject:
   - component: {fileID: 2272572954564725385}
   - component: {fileID: 1391084214613024125}
   - component: {fileID: 4727033390717384874}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TorchLight (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2420,7 +2420,7 @@ GameObject:
   - component: {fileID: 7741470604558521556}
   - component: {fileID: 5834984698130817098}
   - component: {fileID: 7765052151535634450}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TorchLight (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2547,7 +2547,7 @@ GameObject:
   - component: {fileID: 8680955692183645004}
   - component: {fileID: 5469288138009432730}
   - component: {fileID: 4544687266643684568}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TorchLight (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2674,7 +2674,7 @@ GameObject:
   - component: {fileID: 1040105751512162415}
   - component: {fileID: 4729158280824982428}
   - component: {fileID: 46748727733581723}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2804,7 +2804,7 @@ GameObject:
   - component: {fileID: 1524626063708544158}
   - component: {fileID: 6118807053773139721}
   - component: {fileID: 3893603892445557953}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: BackWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4836,7 +4836,7 @@ GameObject:
   - component: {fileID: 850277195729833020}
   - component: {fileID: 5125345056487170544}
   - component: {fileID: 2219550138639283358}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OverHeadLight3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4963,7 +4963,7 @@ GameObject:
   - component: {fileID: 1048267431417213385}
   - component: {fileID: 984228301971036303}
   - component: {fileID: 7147434615422966271}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot Light (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5090,7 +5090,7 @@ GameObject:
   - component: {fileID: 8836147812343131936}
   - component: {fileID: 4149026793987647621}
   - component: {fileID: 216813526391529007}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OverHeadLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5217,7 +5217,7 @@ GameObject:
   - component: {fileID: 9119146113487086639}
   - component: {fileID: 8592961467786345400}
   - component: {fileID: 7178790052420716163}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot Light (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5344,7 +5344,7 @@ GameObject:
   - component: {fileID: 7449511421193950429}
   - component: {fileID: 3037381019121777019}
   - component: {fileID: 6671085020184792776}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TorchLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5471,7 +5471,7 @@ GameObject:
   - component: {fileID: 3384103534947579452}
   - component: {fileID: 9125284118485839884}
   - component: {fileID: 5526899207862297207}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Spot Light (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5596,7 +5596,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2986899605173473558}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: WitchHut
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5654,7 +5654,7 @@ GameObject:
   - component: {fileID: 2532941377203925018}
   - component: {fileID: 5852091643838214015}
   - component: {fileID: 4411067428358968808}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6010,7 +6010,7 @@ GameObject:
   - component: {fileID: 5583830730990309500}
   - component: {fileID: 4676441610905239797}
   - component: {fileID: 2781420121465225838}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: LeftWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8045,7 +8045,7 @@ GameObject:
   - component: {fileID: 4853185670993369708}
   - component: {fileID: 7821929365176162240}
   - component: {fileID: 4169116664817250495}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: RightWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9958,7 +9958,7 @@ GameObject:
   - component: {fileID: 192640879786659506}
   - component: {fileID: 5887830597065193269}
   - component: {fileID: 4781736606820085884}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -10094,7 +10094,7 @@ GameObject:
   - component: {fileID: 1437507297645125177}
   - component: {fileID: 4808491298376176161}
   - component: {fileID: 744904188018307980}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OverHeadLight2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10221,7 +10221,7 @@ GameObject:
   - component: {fileID: 1382261025199798267}
   - component: {fileID: 3395906788282739197}
   - component: {fileID: 2926584613096678068}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TorchLight (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10348,7 +10348,7 @@ GameObject:
   - component: {fileID: 3811350426762998137}
   - component: {fileID: 912856956821680042}
   - component: {fileID: 4860723648188695881}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TorchLight (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10475,7 +10475,7 @@ GameObject:
   - component: {fileID: 2010607032998667035}
   - component: {fileID: 6595394859215276724}
   - component: {fileID: 2004485907183170645}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Directional Light
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -10602,7 +10602,7 @@ GameObject:
   - component: {fileID: 2840835913626627986}
   - component: {fileID: 4125368489659253896}
   - component: {fileID: 287602094682404038}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: OverHeadLight1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
