@@ -43,7 +43,7 @@ public class SpellProjectile : MonoBehaviour
                 sphereCollider.radius = 0;
                 _ExplosionSpeed = 0;
             }
-            ShowDebugSphere(sphereCollider.radius, .1f);
+            //ShowDebugSphere(sphereCollider.radius, .1f);
 
 
         }
