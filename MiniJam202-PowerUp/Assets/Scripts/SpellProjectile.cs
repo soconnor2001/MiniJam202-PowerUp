@@ -23,13 +23,13 @@ public class SpellProjectile : MonoBehaviour
     private void Start()
     {
         sphereCollider = gameObject.GetComponent<SphereCollider>();
+        this.IsAlive = true;
     }
     public void Initialize(float damageRadius, float damage)
     {
         
         this.damageRadius = damageRadius;
         this.damage = damage;
-        this.IsAlive = true;
     }
 
     // Update is called once per frame
