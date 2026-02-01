@@ -19,6 +19,9 @@ public class Spell : MonoBehaviour
     public int isHeldDelayInt = 5;
     public int isHeldDelayBase = 5;
 
+
+    [HideInInspector]
+    public bool IsCastingSpell =false;
     List<GameObject> projectiles;
 
     public void OnValidate()
@@ -36,6 +39,8 @@ public class Spell : MonoBehaviour
     public void StartSpell()
     {
         StartTime = Time.timeSinceLevelLoad;
+        IsCastingSpell = true;
+
     }
     public float CurrentChargeLevel()
     {
@@ -51,6 +56,7 @@ public class Spell : MonoBehaviour
     /// <param name="Origin"></param>
     public GameObject EndSpell(Transform Origin)
     {
+        IsCastingSpell = false;
         return _SpellType.CastSpell(CurrentChargeLevel(), Origin);
     }
 
@@ -91,19 +97,22 @@ public class Spell : MonoBehaviour
             }
             
         }
-        if(_CastSpellAction.WasPressedThisFrame()){
-            animator.SetTrigger("Fire");
-            animator.SetBool("IsHeld", true);
-        }
+        
 
         if (_CastSpellAction.WasPressedThisFrame() && !IsInCoolDown())
         {
             StartSpell();
             //Debug.Log("spell Cast pressed");
         }
-        
 
-        if (_CastSpellAction.WasReleasedThisFrame() && !IsInCoolDown())
+        if (_CastSpellAction.WasPressedThisFrame() && IsCastingSpell)
+        {
+            animator.SetTrigger("Fire");
+            animator.SetBool("IsHeld", true);
+        }
+
+
+        if (_CastSpellAction.WasReleasedThisFrame() && !IsInCoolDown() && IsCastingSpell)
         {
             //Debug.Log("spell Cast released"+ CurrentChargeLevel()+transform.position);
             projectiles.Add(EndSpell(transform));
