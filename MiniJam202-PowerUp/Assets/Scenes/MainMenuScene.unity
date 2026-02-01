@@ -2920,14 +2920,14 @@ RectTransform:
   m_GameObject: {fileID: 347727348}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0935204, y: 4.954316, z: 2.0935204}
+  m_LocalScale: {x: 1.5753741, y: 3.728123, z: 1.5753741}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1865942990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 399.11, y: -219}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: -165, y: -120}
   m_SizeDelta: {x: 493.80005, y: 50}
   m_Pivot: {x: 0.29, y: 0.5}
 --- !u!222 &347727351
@@ -3580,7 +3580,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.12, y: 0.09}
   m_AnchorMax: {x: 0.14, y: 0.13}
-  m_AnchoredPosition: {x: 65, y: 0}
+  m_AnchoredPosition: {x: 127, y: 0}
   m_SizeDelta: {x: 174.19037, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &491488655
@@ -4447,15 +4447,15 @@ RectTransform:
   m_GameObject: {fileID: 773752942}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 29.395273, y: 17.358044, z: 14.37281}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1865942990}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -2560, y: -1396}
+  m_AnchoredPosition: {x: 4.790039, y: 0.5600281}
+  m_SizeDelta: {x: 19.620056, y: 7.240034}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &773752944
 MonoBehaviour:
@@ -4470,7 +4470,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.6156863}
+  m_Color: {r: 0, g: 0, b: 0, a: 0.89411765}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -5484,7 +5484,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.09, y: 0.24}
   m_AnchorMax: {x: 0.94, y: 0.73}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 42}
   m_SizeDelta: {x: 0, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1663703016
@@ -5507,8 +5507,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\tAfter a spell gone wrong, Rana needs to defend your self from all her
-    kitchen  "
+  m_text: "\nUse WASD To move around and avoid enemies\n\nClick and Hold to cast
+    a spell. \n\nThe longer you hold the mouse, the stronger your spell will be.
+    \nBut be careful: if you charge for too long, you may be caught in the blast
+    radius.\n\nTry to stay alive for as long as possible"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5535,8 +5537,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 34.1
+  m_fontSizeBase: 34.1
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -7783,10 +7785,10 @@ RectTransform:
   - {fileID: 491488654}
   m_Father: {fileID: 1415583800}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.03}
+  m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1865942991
 MonoBehaviour:
