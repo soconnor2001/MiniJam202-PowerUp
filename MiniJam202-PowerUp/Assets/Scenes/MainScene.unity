@@ -1954,7 +1954,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2969950822063778548, guid: 5ea1fd5e0686fba4eb18199f34617016, type: 3}
       propertyPath: ChargeScale
-      value: 20
+      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3005131591674618375, guid: 5ea1fd5e0686fba4eb18199f34617016, type: 3}
       propertyPath: m_Layer
@@ -2055,9 +2055,6 @@ PrefabInstance:
     - target: {fileID: 3699359218666223829, guid: 5ea1fd5e0686fba4eb18199f34617016, type: 3}
       propertyPath: changedHealth.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
       value: 0
-    - target: {fileID: 2969950822063778548, guid: 5ea1fd5e0686fba4eb18199f34617016, type: 3}
-      propertyPath: ChargeScale
-      value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 3699359218666223829, guid: 5ea1fd5e0686fba4eb18199f34617016, type: 3}
       propertyPath: changedHealth.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -2234,6 +2231,10 @@ PrefabInstance:
     - target: {fileID: 5813282081579864571, guid: 5ea1fd5e0686fba4eb18199f34617016, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5831493422084969046, guid: 5ea1fd5e0686fba4eb18199f34617016, type: 3}
+      propertyPath: Immortal
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5852705393346090022, guid: 5ea1fd5e0686fba4eb18199f34617016, type: 3}
       propertyPath: m_Layer
@@ -3137,6 +3138,31 @@ MonoBehaviour:
         m_Curve:
         - serializedVersion: 3
           time: 0
+          value: 1
+          inSlope: 0.070168465
+          outSlope: 0.070168465
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0.32124352
+        - serializedVersion: 3
+          time: 1
+          value: 0
+          inSlope: 0.056612298
+          outSlope: 0.056612298
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0.10880828
+          outWeight: 0
+        m_PreInfinity: 2
+        m_PostInfinity: 2
+        m_RotationOrder: 4
+    - Monster: {fileID: 361422736210656495, guid: 7203066ebb6379b468d7db418f651b8c, type: 3}
+      SpawnCurve:
+        serializedVersion: 2
+        m_Curve:
+        - serializedVersion: 3
+          time: 0
           value: 0
           inSlope: 0
           outSlope: 0
@@ -3145,22 +3171,13 @@ MonoBehaviour:
           inWeight: 0
           outWeight: 0
         - serializedVersion: 3
-          time: 0.1
+          time: 1
           value: 1
-          inSlope: 0.061234016
-          outSlope: 0.061234016
+          inSlope: 2
+          outSlope: 2
           tangentMode: 0
           weightedMode: 0
-          inWeight: 0.16206665
-          outWeight: 0.33333334
-        - serializedVersion: 3
-          time: 0.9982944
-          value: 0.19512194
-          inSlope: -0.0304347
-          outSlope: -0.0304347
-          tangentMode: 0
-          weightedMode: 0
-          inWeight: 0.2249077
+          inWeight: 0
           outWeight: 0
         m_PreInfinity: 2
         m_PostInfinity: 2

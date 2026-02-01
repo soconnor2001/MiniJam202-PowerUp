@@ -8,6 +8,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4821748984738041, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
+      propertyPath: chargeSpeed
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 20059965615764980, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
+      propertyPath: inaccuracy
+      value: 6.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1175011806599420410, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.044
@@ -51,6 +59,18 @@ PrefabInstance:
     - target: {fileID: 2168699477389224873, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
       propertyPath: m_Name
       value: Knife2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2752762127202587056, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
+      propertyPath: waitPeriod
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2832003021088454233, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
+      propertyPath: waitPeriod
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3610589515864955703, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
+      propertyPath: damageInflictedOnContact
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3920382327018333011, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
       propertyPath: m_LocalPosition.x
@@ -100,6 +120,14 @@ PrefabInstance:
       propertyPath: 'm_Materials.Array.data[1]'
       value: 
       objectReference: {fileID: 2100000, guid: 6b4f8bd11c97a644fb1ef823031052f2, type: 2}
+    - target: {fileID: 8180634924790297083, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
+      propertyPath: frequency
+      value: 13.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8460141912094071076, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
+      propertyPath: maximumHealth
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8703346066428847758, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
       propertyPath: m_Range
       value: 5.26
@@ -107,6 +135,10 @@ PrefabInstance:
     - target: {fileID: 8703346066428847758, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
       propertyPath: m_Intensity
       value: 23.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8722712785654048424, guid: ec4af9f1f60ae4446b5cc9d355b86790, type: 3}
+      propertyPath: moveSpeed
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
