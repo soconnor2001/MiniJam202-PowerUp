@@ -53,12 +53,5 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Die()
-    {
-        if(!Immortal)
-        {
-            Debug.Log("RANA HAS FALLEN :(");
-        }
-        
-    }
+    
 }

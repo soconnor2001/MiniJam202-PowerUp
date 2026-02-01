@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using static UnityEngine.Timeline.DirectorControlPlayable;
 
+[RequireComponent(typeof(PlayerController))]
 public class DeathScreenControl : MonoBehaviour
 {
     GameOverMenu pauseMenuObj;
@@ -16,8 +17,12 @@ public class DeathScreenControl : MonoBehaviour
 
     public void Die()
     {
-        pauseMenuObj.SetTime(Time.timeSinceLevelLoad);
-        pauseMenuObj.togglePauseMenu();
+        if (!GetComponent<PlayerController>().Immortal)
+        {
+            pauseMenuObj.SetTime(Time.timeSinceLevelLoad);
+            pauseMenuObj.togglePauseMenu();
+        }
+        
     }
     
 }
