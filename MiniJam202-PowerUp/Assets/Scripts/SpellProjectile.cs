@@ -2,96 +2,74 @@ using System.Collections;
 using UnityEngine;
 using static UnityEditor.Experimental.GraphView.GraphView;
 
-[RequireComponent(typeof(SphereCollider))]
 public class SpellProjectile : MonoBehaviour
 {
     public ParticleSystem ProjectileSystem;
     public ParticleSystem ExplosionSystem;
     public float projectileSpeed = 20f;
-    public float ExplosionLengthInSeconds = .5f;
     float damageRadius = .1f;
     float damage = .1f;
+
+    [SerializeField] AudioSource pew;
+    [SerializeField] AudioSource boom;
+
     [HideInInspector]
     public bool IsAlive;
-    [HideInInspector]
-    public bool IsExploding;
-
-    private float _ExplosionStartTime = 0;
-    private float _ExplosionSpeed = 0;
-    private SphereCollider sphereCollider = default!;
-
-    private void Start()
-    {
-        sphereCollider = gameObject.GetComponent<SphereCollider>();
-        this.IsAlive = true;
-    }
+    
     public void Initialize(float damageRadius, float damage)
     {
         
         this.damageRadius = damageRadius;
         this.damage = damage;
+        this.IsAlive = true;
+    }
+
+    public void Start()
+    {
+        Debug.Log("pew!");
+        pew.Play();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IsExploding)
-        {
-            sphereCollider.radius += _ExplosionSpeed * Time.deltaTime;
-            if (Time.time - _ExplosionStartTime > ExplosionLengthInSeconds)
-            {
-                sphereCollider.radius = 0;
-                _ExplosionSpeed = 0;
-            }
-            ShowDebugSphere(sphereCollider.radius, .1f);
-
-
-        }
-        else if (IsAlive)
-        {
-            transform.Translate(Vector3.forward * projectileSpeed * Time.deltaTime);
-        }
-            
+        transform.Translate(Vector3.forward * projectileSpeed*Time.deltaTime);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (IsExploding)
+        string[] layers = { "Targets" ,"Environment"};
+        int mask = LayerMask.GetMask(layers);
+        if (mask == (mask | (1 << other.gameObject.layer))) 
         {
-            string[] explodingLayers = { "Targets" };
-            int explodingMask = LayerMask.GetMask(explodingLayers);
-            if (explodingMask == (explodingMask | (1 << other.gameObject.layer)))
-            {
-                other.gameObject.GetComponent<Health>().ReceiveDamage((uint)damage);
-            }
-            
+            Explode();
         }
-        else
-        {
-            string[] movingLayers = { "Targets", "Environment" };
-            int movingMask = LayerMask.GetMask(movingLayers);
-            if (movingMask == (movingMask | (1 << other.gameObject.layer)))
-            {
-                StartExplosion();
-            }
-        }
-            
     }
     
 
-    void StartExplosion()
+    void Explode()
     {
+        Debug.Log("boom!");
+        boom.Play();
+
         ProjectileSystem.Stop();
         SetPSExplosionToRange(ExplosionSystem, damageRadius);
         ExplosionSystem.Play();
         ShowDebugSphere(damageRadius,ExplosionSystem.main.duration);
         IsAlive = false;
         projectileSpeed = 0;
-        IsExploding = true;
-        _ExplosionStartTime = Time.time;
-        _ExplosionSpeed = damageRadius / ExplosionLengthInSeconds;
-
-        Destroy(gameObject,Mathf.Max(ExplosionSystem.main.duration,ExplosionLengthInSeconds));
+        // do damage
+        string[] layers = { "Targets" };
+        int mask = LayerMask.GetMask(layers);
+        Collider[] hits = Physics.OverlapSphere(transform.position, damageRadius,
+            mask);
+        foreach (Collider hit in hits)
+        {
+            //hit.collider.gameObject.GetComponent<PLAYER_OR_MONSTER_SCRIPT_HERE>.Damage(this.damage);
+            Debug.Log(hit.gameObject.name + this.damage);
+        }
+        
+        Destroy(gameObject,ExplosionSystem.main.duration);
     }
 
     void SetPSExplosionToRange(ParticleSystem ps, float radius)
