@@ -84,7 +84,7 @@ public class SpellProjectile : MonoBehaviour
         ProjectileSystem.Stop();
         SetPSExplosionToRange(ExplosionSystem, damageRadius);
         ExplosionSystem.Play();
-        ShowDebugSphere(damageRadius,ExplosionSystem.main.duration);
+        //ShowDebugSphere(damageRadius,ExplosionSystem.main.duration);
         IsAlive = false;
         projectileSpeed = 0;
         IsExploding = true;
