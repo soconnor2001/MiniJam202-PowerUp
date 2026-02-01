@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     public Health health;
 
+    public bool Immortal = false;
+
     private InputAction moveAction;
     private float initialYPosition;
     [HideInInspector]
@@ -50,4 +52,6 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
+
+    
 }

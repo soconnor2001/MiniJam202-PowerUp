@@ -31,16 +31,16 @@ public class GameManager : MonoBehaviour
     }
     private void OnValidate()
     {
-        if (AverageTimeBetwenSpawns.Evaluate(Time.time) < SpawnRateVariability / 2)
+        if (AverageTimeBetwenSpawns.Evaluate(Time.timeSinceLevelLoad) < SpawnRateVariability / 2)
         {
-            SpawnRateVariability = 2* AverageTimeBetwenSpawns.Evaluate(Time.time);
+            SpawnRateVariability = 2* AverageTimeBetwenSpawns.Evaluate(Time.timeSinceLevelLoad / (MinutesToMaxDifficulty * 60));
         }
     }
     
     void ResetTimeToNextSpawn()
     {
         TimeToNextSpawn = ((UnityEngine.Random.value * SpawnRateVariability) / 2f);
-        TimeToNextSpawn = (TimeToNextSpawn - (TimeToNextSpawn / 2)) + (AverageTimeBetwenSpawns.Evaluate(Time.time/(MinutesToMaxDifficulty*60)));
+        TimeToNextSpawn = (TimeToNextSpawn - (TimeToNextSpawn / 2)) + (AverageTimeBetwenSpawns.Evaluate(Time.timeSinceLevelLoad/(MinutesToMaxDifficulty*60)));
     }
 
     // Update is called once per frame
@@ -58,11 +58,11 @@ public class GameManager : MonoBehaviour
     {
         MonsterType typeToSpawn = GetMonsterTypeToSpawn();
         List<MonsterVariant> variants = typeToSpawn.Variants;
-        float typeTotal = typeToSpawn.GetCurrentSpawnChance(Time.time);
+        float typeTotal = typeToSpawn.GetCurrentSpawnChance(Time.timeSinceLevelLoad);
         string monsterName = typeToSpawn.Name;
         float monsterSpawnHeight = typeToSpawn.SpawnHeight;
 
-        int numToSpawn = UnityEngine.Random.Range(0, (int)MaxMonsterToSpawn.Evaluate(Time.time / (MinutesToMaxDifficulty * 60)) +1);
+        int numToSpawn = UnityEngine.Random.Range(0, (int)MaxMonsterToSpawn.Evaluate(Time.timeSinceLevelLoad / (MinutesToMaxDifficulty * 60)) +1);
         List<GameObject> monstersToSpawn = new();
         for (int i = 0; i < numToSpawn; i++)
         {
@@ -94,7 +94,7 @@ public class GameManager : MonoBehaviour
 
         while (index < Variants.Count && randVal > 0)
         {
-            randVal = randVal - Variants[index].GetCurrentSpawnChance(Time.time);
+            randVal = randVal - Variants[index].GetCurrentSpawnChance(Time.timeSinceLevelLoad);
             if (randVal <= 0)
             {
                 TypeToSpawn = Variants[index];
@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
         
         while (index < Monsters.Count && randVal > 0)
         {
-            randVal = randVal - Monsters[index].GetCurrentSpawnChance(Time.time);
+            randVal = randVal - Monsters[index].GetCurrentSpawnChance(Time.timeSinceLevelLoad);
             if (randVal <= 0)
             {
                 TypeToSpawn = Monsters[index];
@@ -137,7 +137,7 @@ public class GameManager : MonoBehaviour
         float total = 0;
         foreach (var monster in Monsters)
         {
-            total += monster.GetCurrentSpawnChance(Time.time);
+            total += monster.GetCurrentSpawnChance(Time.timeSinceLevelLoad);
         }
 
         return total;
@@ -153,7 +153,7 @@ public class GameManager : MonoBehaviour
             List < (GameObject, float) > variantChances= new();
             foreach (var variant in monsterType.Variants)
             {
-                float chance = variant.SpawnCurve.Evaluate(Time.time / 60 / TimeToNextSpawn);
+                float chance = variant.SpawnCurve.Evaluate(Time.timeSinceLevelLoad / 60 / TimeToNextSpawn);
                 if (chance > 0)
                 {
                     variantChances.Add((variant.Monster, chance));

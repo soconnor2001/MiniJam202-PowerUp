@@ -21,6 +21,6 @@ public class ExplosionSpell : ScriptableObject, SpellType
 
     public float Damage(float Charge)
     {
-        return Charge;
+        return 1;
     }
 }
