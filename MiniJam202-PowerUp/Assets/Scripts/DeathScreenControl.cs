@@ -16,7 +16,7 @@ public class DeathScreenControl : MonoBehaviour
 
     public void Die()
     {
-        pauseMenuObj.SetTime(Time.time);
+        pauseMenuObj.SetTime(Time.timeSinceLevelLoad);
         pauseMenuObj.togglePauseMenu();
     }
     

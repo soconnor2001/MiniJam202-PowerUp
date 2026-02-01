@@ -48,7 +48,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::GameOverMenu
   PauseMenuObj: {fileID: 5383411913650340018}
   canPause: 0
-  TimeText: {fileID: 0}
+  TimeText: {fileID: 3186064180830400986}
 --- !u!1 &1337496070403095624
 GameObject:
   m_ObjectHideFlags: 0
@@ -388,8 +388,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 7570394000348621347}
+        m_TargetAssemblyTypeName: GameOverMenu, Assembly-CSharp
         m_MethodName: returnToMenu
         m_Mode: 1
         m_Arguments:
@@ -625,8 +625,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+      - m_Target: {fileID: 7570394000348621347}
+        m_TargetAssemblyTypeName: GameOverMenu, Assembly-CSharp
         m_MethodName: reloadLevel
         m_Mode: 1
         m_Arguments:

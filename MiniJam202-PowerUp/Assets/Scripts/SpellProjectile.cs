@@ -38,7 +38,7 @@ public class SpellProjectile : MonoBehaviour
         if (IsExploding)
         {
             sphereCollider.radius += _ExplosionSpeed * Time.deltaTime;
-            if (Time.time - _ExplosionStartTime > ExplosionLengthInSeconds)
+            if (Time.timeSinceLevelLoad - _ExplosionStartTime > ExplosionLengthInSeconds)
             {
                 sphereCollider.radius = 0;
                 _ExplosionSpeed = 0;
@@ -88,7 +88,7 @@ public class SpellProjectile : MonoBehaviour
         IsAlive = false;
         projectileSpeed = 0;
         IsExploding = true;
-        _ExplosionStartTime = Time.time;
+        _ExplosionStartTime = Time.timeSinceLevelLoad;
         _ExplosionSpeed = damageRadius / ExplosionLengthInSeconds;
 
         Destroy(gameObject,Mathf.Max(ExplosionSystem.main.duration,ExplosionLengthInSeconds));

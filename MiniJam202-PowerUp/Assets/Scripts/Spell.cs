@@ -35,11 +35,11 @@ public class Spell : MonoBehaviour
 
     public void StartSpell()
     {
-        StartTime = Time.time;
+        StartTime = Time.timeSinceLevelLoad;
     }
     public float CurrentChargeLevel()
     {
-        return ChargeScale * ChargeCurve.Evaluate((Time.time - StartTime)/ChargeTimeScale);
+        return ChargeScale * ChargeCurve.Evaluate((Time.timeSinceLevelLoad - StartTime)/ChargeTimeScale);
     }
 
 
