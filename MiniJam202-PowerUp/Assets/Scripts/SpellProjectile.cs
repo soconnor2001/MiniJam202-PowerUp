@@ -28,6 +28,8 @@ public class SpellProjectile : MonoBehaviour
     {
         sphereCollider = gameObject.GetComponent<SphereCollider>();
         this.IsAlive = true;
+        Debug.Log("pew!");
+        pew.Play();
     }
     public void Initialize(float damageRadius, float damage)
     {
@@ -36,11 +38,7 @@ public class SpellProjectile : MonoBehaviour
         this.damage = damage;
     }
 
-    public void Start()
-    {
-        Debug.Log("pew!");
-        pew.Play();
-    }
+    
 
     // Update is called once per frame
     void Update()
