@@ -9,6 +9,10 @@ public class SpellProjectile : MonoBehaviour
     public float projectileSpeed = 20f;
     float damageRadius = .1f;
     float damage = .1f;
+
+    [SerializeField] AudioSource pew;
+    [SerializeField] AudioSource boom;
+
     [HideInInspector]
     public bool IsAlive;
     
@@ -18,6 +22,12 @@ public class SpellProjectile : MonoBehaviour
         this.damageRadius = damageRadius;
         this.damage = damage;
         this.IsAlive = true;
+    }
+
+    public void Start()
+    {
+        Debug.Log("pew!");
+        pew.Play();
     }
 
     // Update is called once per frame
@@ -39,6 +49,9 @@ public class SpellProjectile : MonoBehaviour
 
     void Explode()
     {
+        Debug.Log("boom!");
+        boom.Play();
+
         ProjectileSystem.Stop();
         SetPSExplosionToRange(ExplosionSystem, damageRadius);
         ExplosionSystem.Play();

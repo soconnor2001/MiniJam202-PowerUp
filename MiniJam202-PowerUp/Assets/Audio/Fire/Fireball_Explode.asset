@@ -1,0 +1,82 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-8037398723091475727
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: eminyildirim_magic_impact3_{-8037398723091475727}
+  m_AudioClip: {fileID: 8300000, guid: 78c6750132fdbfb4e89c3bab3ea7f6a1, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-2008005650957182268
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: eminyildirim_magic_impact2_{-2008005650957182268}
+  m_AudioClip: {fileID: 8300000, guid: 2e5e22486f642ea4c808910e53968212, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &3753288604004935200
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: eminyildirim_magic_impact4_{3753288604004935200}
+  m_AudioClip: {fileID: 8300000, guid: 9926c679bc65d7e4ab14e074f6217e7e, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &6228784624101055019
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: eminyildirim_magic_impact1_{6228784624101055019}
+  m_AudioClip: {fileID: 8300000, guid: 74f2300ab0efe26438fabcf7526834ee, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Fireball_Explode
+  m_Volume: 0
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: -455.61496, y: 288.77005}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: 6228784624101055019}
+  - {fileID: -2008005650957182268}
+  - {fileID: -8037398723091475727}
+  - {fileID: 3753288604004935200}
+  - {fileID: 7051030219392021070}
+  m_AvoidRepeatingLast: 2
+  m_PlaybackMode: 2
+  m_TriggerMode: 0
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 1
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 1
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
+--- !u!1233149941 &7051030219392021070
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: eminyildirim_magic_impact5_{7051030219392021070}
+  m_AudioClip: {fileID: 8300000, guid: a3eed3948f955ca4fa6fa96e5672cbe8, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
