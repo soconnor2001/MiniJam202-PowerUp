@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7135890812044442495}
   - component: {fileID: 8723250023838940145}
   - component: {fileID: 2608336917790887890}
+  - component: {fileID: 8460141912094071076}
   - component: {fileID: 3610589515864955703}
   - component: {fileID: 4865690264461994041}
   - component: {fileID: 8180634924790297083}
@@ -20,7 +21,7 @@ GameObject:
   - component: {fileID: 2832003021088454233}
   - component: {fileID: 4821748984738041}
   - component: {fileID: 2752762127202587056}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Knife
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -110,6 +111,44 @@ MonoBehaviour:
   windupBehavior: {fileID: 2832003021088454233}
   chargingForwardBehavior: {fileID: 4821748984738041}
   cooldownBehavior: {fileID: 2752762127202587056}
+--- !u!114 &8460141912094071076
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2168699477389224873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 669e39780c7dc5142827b030ab4cbfd4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  maximumHealth: 1
+  invulnerabilityPeriod: 1.53
+  receivedDamage:
+    m_PersistentCalls:
+      m_Calls: []
+  receivedHealing:
+    m_PersistentCalls:
+      m_Calls: []
+  changedHealth:
+    m_PersistentCalls:
+      m_Calls: []
+  died:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8460141912094071076}
+        m_TargetAssemblyTypeName: Health, Assembly-CSharp
+        m_MethodName: DestroySelf
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3610589515864955703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -325,6 +364,22 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 103e9eadba718c24696807408b6384a9, type: 3}
       propertyPath: m_Name
       value: FlyingKnife
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 103e9eadba718c24696807408b6384a9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3921272780482338269, guid: 103e9eadba718c24696807408b6384a9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6742637722635725795, guid: 103e9eadba718c24696807408b6384a9, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 9001693792885817927, guid: 103e9eadba718c24696807408b6384a9, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

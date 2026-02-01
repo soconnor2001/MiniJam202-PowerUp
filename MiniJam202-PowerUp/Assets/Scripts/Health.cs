@@ -77,5 +77,13 @@ public class Health : MonoBehaviour
     public void Die()
     {
         died.Invoke();
+        
     }
+
+    public void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
+
+   
 }
