@@ -229,6 +229,8 @@ MonoBehaviour:
   ChargeTimeScale: 3
   SpellTypeName: ExplosionSpell
   MaxProjectilesOnScreen: 1
+  isHeldDelayInt: 5
+  isHeldDelayBase: 5
 --- !u!114 &3699359218666223829
 MonoBehaviour:
   m_ObjectHideFlags: 0

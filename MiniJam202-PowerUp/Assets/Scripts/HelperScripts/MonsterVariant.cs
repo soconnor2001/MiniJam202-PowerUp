@@ -7,6 +7,11 @@ public class MonsterVariant
 {
     public GameObject Monster;
     public AnimationCurve SpawnCurve;
+
+    public float GetCurrentSpawnChance(float timeSinceStart)
+    {
+        return SpawnCurve.Evaluate(timeSinceStart);
+    }
 }
 
 
