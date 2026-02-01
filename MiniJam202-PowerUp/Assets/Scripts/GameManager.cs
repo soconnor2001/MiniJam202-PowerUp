@@ -20,11 +20,14 @@ public class GameManager : MonoBehaviour
     public float SpawnRateVariability;
     public AnimationCurve MaxMonsterToSpawn;
 
+    public AudioSource themeMusic;
+
     float TimeToNextSpawn;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ResetTimeToNextSpawn();
+        themeMusic.Play();
     }
     private void OnValidate()
     {
