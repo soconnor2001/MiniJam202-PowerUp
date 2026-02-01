@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
 
     public Health health;
 
+    public bool Immortal = false;
+
     private InputAction moveAction;
     private float initialYPosition;
     [HideInInspector]
@@ -49,5 +51,14 @@ public class PlayerController : MonoBehaviour
                 transform.position = new(transform.position.x, initialYPosition, transform.position.z);
             }
         }
+    }
+
+    public void Die()
+    {
+        if(!Immortal)
+        {
+            Debug.Log("RANA HAS FALLEN :(");
+        }
+        
     }
 }
